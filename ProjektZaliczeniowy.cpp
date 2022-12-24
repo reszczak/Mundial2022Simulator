@@ -15,30 +15,19 @@ using namespace std;
 //    bramki = rand() % 6 + 1;
 //    return bramki;
 //}
-double szansa1(int waga1,int waga2)
+void szansa(int waga1, int waga2, int* szansa1, int* szansa2)
 {
-   double szansa1;
-    szansa1 = (waga1 / (waga1 + waga2))*100;
-   return szansa1;
+    szansa2 = &waga1;
 }
-double szansa2(int waga1,int waga2)
-{
-    double szansa2;
-    szansa2 = (waga2/(waga1 + waga2))*100;
-    return szansa2;
-}
-//int mecz1(int dr1, int dr2) 
-//{
-//    int dr1p, dr2p, dr1m, dr2m;
-//
-//}
 
 int main()
 {
+    int *szansa1 = 0;
+    int *szansa2 = 0;
     int a = 4;
     int b = 6;
-    cout << "szansa pierwszego zespolu to: " << szansa1(a ,b) << "%" << endl;
-    cout << "szansa drugiego zespolu to: " << szansa2(a, b) << "%"<<endl;
+    szansa(a, b, szansa1, szansa2);
+    cout << szansa2;
 
 }
 
