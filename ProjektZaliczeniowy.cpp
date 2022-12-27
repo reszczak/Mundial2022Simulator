@@ -262,7 +262,24 @@ int main()
     int b = 6;
     cout << "szansa pierwszego zespolu to: " << szansa1(a, b) << "%" << endl;
     cout << "szansa drugiego zespolu to: " << szansa2(a, b) << "%"<<endl;
-
+    /* JAK MA WYGLĄDAĆ WYWOŁANIE KLASY?:
+    
+    grupa gr1;
+    gr1.dr1=druzyna1;
+     gr1.dr2=druzyna2;
+      gr1.dr3=druzyna3;
+       gr1.dr4=druzyna4;
+    gr1.pkt1 = punkty1;
+     gr1.pkt2 = punkty2;
+      gr1.pkt3 = punkty3;
+       gr1.pkt4 = punkty4;
+    gr1.bil1=bilans1;
+     gr1.bil2=bilans2;
+      gr1.bil3=bilans3;
+       gr1.bil4=bilans4;
+    gr1.group="A";
+    gr1.tabela();
+    */
 }
 
 
