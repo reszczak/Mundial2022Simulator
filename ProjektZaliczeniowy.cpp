@@ -41,26 +41,45 @@ public:
             druzyna4();
            
         }
+        if (dr1 > dr2 > dr4 > dr3)
+        {
+            druzyna1();
+            druzyna2();
+            druzyna4();
+            druzyna3();
+
+        }
         if (dr1 > dr3 > dr2 > dr4)
         {
             druzyna1();
             druzyna3();
             druzyna2();
             druzyna4();
+
         }
-        if (dr1 > dr2 > dr3 > dr4)
+        if (dr1 > dr3 > dr4 > dr2)
         {
             druzyna1();
-            druzyna2();
             druzyna3();
             druzyna4();
+            druzyna2();
+
         }
-        if (dr1 > dr2 > dr3 > dr4)
+        if (dr1 > dr4 > dr3 > dr2)
         {
             druzyna1();
+            druzyna4();
+            druzyna3();
+            druzyna2();
+
+        }
+        if (dr1 > dr4 > dr2 > dr3)
+        {
+            druzyna1();
+            druzyna4();
             druzyna2();
             druzyna3();
-            druzyna4();
+
         }
         if (dr2 > dr1 > dr3 > dr4)
         {
@@ -68,6 +87,15 @@ public:
             druzyna1();
             druzyna3();
             druzyna4();
+
+        }
+        if (dr2 > dr1 > dr4 > dr3)
+        {
+            druzyna2();
+            druzyna1();
+            druzyna4();
+            druzyna3();
+
         }
         if (dr2 > dr3 > dr1 > dr4)
         {
@@ -75,6 +103,7 @@ public:
             druzyna3();
             druzyna1();
             druzyna4();
+
         }
         if (dr2 > dr3 > dr4 > dr1)
         {
@@ -82,6 +111,119 @@ public:
             druzyna3();
             druzyna4();
             druzyna1();
+
+        }
+        if (dr2 > dr4 > dr3 > dr1)
+        {
+            druzyna2();
+            druzyna4();
+            druzyna3();
+            druzyna1();
+
+        }
+        if (dr2 > dr4 > dr1 > dr3)
+        {
+            druzyna2();
+            druzyna4();
+            druzyna1();
+            druzyna3();
+
+        }
+        if (dr3 > dr1 > dr2 > dr4)
+        {
+            druzyna3();
+            druzyna1();
+            druzyna2();
+            druzyna4();
+
+        }
+        if (dr3 > dr1 > dr4 > dr2)
+        {
+            druzyna3();
+            druzyna1();
+            druzyna4();
+            druzyna2();
+
+        }
+        if (dr3 > dr2 > dr1 > dr4)
+        {
+            druzyna3();
+            druzyna2();
+            druzyna1();
+            druzyna4();
+
+        }
+        if (dr3 > dr2 > dr4 > dr1)
+        {
+            druzyna3();
+            druzyna2();
+            druzyna4();
+            druzyna1();
+
+        }
+        if (dr3 > dr4 > dr2 > dr1)
+        {
+            druzyna3();
+            druzyna4();
+            druzyna2();
+            druzyna1();
+
+        }
+        if (dr3 > dr4 > dr1 > dr2)
+        {
+            druzyna3();
+            druzyna4();
+            druzyna1();
+            druzyna2();
+
+        }
+        if (dr4 > dr1 > dr2 > dr3)
+        {
+            druzyna4();
+            druzyna1();
+            druzyna2();
+            druzyna3();
+
+        }
+        if (dr4 > dr1 > dr3 > dr2)
+        {
+            druzyna4();
+            druzyna1();
+            druzyna3();
+            druzyna2();
+
+        }
+        if (dr4 > dr2 > dr1 > dr3)
+        {
+            druzyna4();
+            druzyna2();
+            druzyna1();
+            druzyna3();
+
+        }
+        if (dr4 > dr2 > dr3 > dr1)
+        {
+            druzyna4();
+            druzyna2();
+            druzyna3();
+            druzyna1();
+
+        }
+        if (dr4 > dr3 > dr2 > dr1)
+        {
+            druzyna4();
+            druzyna3();
+            druzyna2();
+            druzyna1();
+
+        }
+        if (dr4 > dr3 > dr1 > dr2)
+        {
+            druzyna4();
+            druzyna3();
+            druzyna1();
+            druzyna2();
+
         }
     
     }
