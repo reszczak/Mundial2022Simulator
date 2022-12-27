@@ -27,11 +27,11 @@ double szansa2(int waga1,int waga2)
     szansa2 = (waga2/(waga1 + waga2))*100;
     return szansa2;
 }
-//int mecz1(int dr1, int dr2) 
-//{
-//    int dr1p, dr2p, dr1m, dr2m;
-//
-//}
+int mecz1(int dr1, int dr2) 
+{
+    int dr1p, dr2p, dr1m, dr2m;
+
+}
 
 int main()
 {
