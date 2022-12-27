@@ -7,14 +7,14 @@
 using namespace std;
 
 
-//
-//int bramki()
-//{
-//    int bramki;
-//    srand(time(NULL));
-//    bramki = rand() % 6 + 1;
-//    return bramki;
-//}
+
+int bramki()
+{
+    int bramki;
+    srand(time(NULL));
+    bramki = rand() % 6 + 1;
+    return bramki;
+}
 double szansa1(int waga1,int waga2)
 {
    double szansa1;
