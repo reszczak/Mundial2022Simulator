@@ -37,8 +37,8 @@ int main()
 {
     int a = 4;
     int b = 6;
-    /*cout << "szansa pierwszego zespolu to: " << szansa1(a ,b) << "%" << endl;
-    cout << "szansa drugiego zespolu to: " << szansa2(a, b) << "%"<<endl;*/
+    cout << "szansa pierwszego zespolu to: " << szansa1(a ,b) << "%" << endl;
+    cout << "szansa drugiego zespolu to: " << szansa2(a, b) << "%"<<endl;
 
 }
 
