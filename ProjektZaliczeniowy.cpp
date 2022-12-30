@@ -33,7 +33,7 @@ public:
     
     void tabela() 
     {
-        if (dr1>dr2>dr3>dr4)
+        if (pkt1>pkt2>pkt3>pkt4)
         {
             druzyna1();
             druzyna2();
@@ -41,7 +41,7 @@ public:
             druzyna4();
            
         }
-        if (dr1 > dr2 > dr4 > dr3)
+        if (pkt1 > pkt2 > pkt4 > pkt3)
         {
             druzyna1();
             druzyna2();
@@ -49,7 +49,7 @@ public:
             druzyna3();
 
         }
-        if (dr1 > dr3 > dr2 > dr4)
+        if (pkt1 > pkt3 > pkt2 > pkt4)
         {
             druzyna1();
             druzyna3();
@@ -57,7 +57,7 @@ public:
             druzyna4();
 
         }
-        if (dr1 > dr3 > dr4 > dr2)
+        if (pkt1 > pkt3 > pkt4 > pkt2)
         {
             druzyna1();
             druzyna3();
@@ -65,7 +65,7 @@ public:
             druzyna2();
 
         }
-        if (dr1 > dr4 > dr3 > dr2)
+        if (pkt1 > pkt4 > pkt3 > pkt2)
         {
             druzyna1();
             druzyna4();
@@ -73,7 +73,7 @@ public:
             druzyna2();
 
         }
-        if (dr1 > dr4 > dr2 > dr3)
+        if (pkt1 > pkt4 > pkt2 > pkt3)
         {
             druzyna1();
             druzyna4();
@@ -81,7 +81,7 @@ public:
             druzyna3();
 
         }
-        if (dr2 > dr1 > dr3 > dr4)
+        if (pkt2 > pkt1 > pkt3 > pkt4)
         {
             druzyna2();
             druzyna1();
@@ -89,7 +89,7 @@ public:
             druzyna4();
 
         }
-        if (dr2 > dr1 > dr4 > dr3)
+        if (pkt2 > pkt1 > pkt4 > pkt3)
         {
             druzyna2();
             druzyna1();
@@ -97,7 +97,7 @@ public:
             druzyna3();
 
         }
-        if (dr2 > dr3 > dr1 > dr4)
+        if (pkt2 > pkt3 > pkt1 > pkt4)
         {
             druzyna2();
             druzyna3();
@@ -105,7 +105,7 @@ public:
             druzyna4();
 
         }
-        if (dr2 > dr3 > dr4 > dr1)
+        if (pkt2 > pkt3 > pkt4 > pkt1)
         {
             druzyna2();
             druzyna3();
@@ -113,7 +113,7 @@ public:
             druzyna1();
 
         }
-        if (dr2 > dr4 > dr3 > dr1)
+        if (pkt2 > pkt4 > pkt3 > pkt1)
         {
             druzyna2();
             druzyna4();
@@ -121,7 +121,7 @@ public:
             druzyna1();
 
         }
-        if (dr2 > dr4 > dr1 > dr3)
+        if (pkt2 > pkt4 > pkt1 > pkt3)
         {
             druzyna2();
             druzyna4();
@@ -129,7 +129,7 @@ public:
             druzyna3();
 
         }
-        if (dr3 > dr1 > dr2 > dr4)
+        if (pkt3 > pkt1 > pkt2 > pkt4)
         {
             druzyna3();
             druzyna1();
@@ -137,7 +137,7 @@ public:
             druzyna4();
 
         }
-        if (dr3 > dr1 > dr4 > dr2)
+        if (pkt3 > pkt1 > pkt4 > pkt2)
         {
             druzyna3();
             druzyna1();
@@ -145,7 +145,7 @@ public:
             druzyna2();
 
         }
-        if (dr3 > dr2 > dr1 > dr4)
+        if (pkt3 > pkt2 > pkt1 > pkt4)
         {
             druzyna3();
             druzyna2();
@@ -153,7 +153,7 @@ public:
             druzyna4();
 
         }
-        if (dr3 > dr2 > dr4 > dr1)
+        if (pkt3 > pkt2 > pkt4 > pkt1)
         {
             druzyna3();
             druzyna2();
@@ -161,7 +161,7 @@ public:
             druzyna1();
 
         }
-        if (dr3 > dr4 > dr2 > dr1)
+        if (pkt3 > pkt4 > pkt2 > pkt1)
         {
             druzyna3();
             druzyna4();
@@ -169,7 +169,7 @@ public:
             druzyna1();
 
         }
-        if (dr3 > dr4 > dr1 > dr2)
+        if (pkt3 > pkt4 > pkt1 > pkt2)
         {
             druzyna3();
             druzyna4();
@@ -177,7 +177,7 @@ public:
             druzyna2();
 
         }
-        if (dr4 > dr1 > dr2 > dr3)
+        if (pkt4 > pkt1 > pkt2 > pkt3)
         {
             druzyna4();
             druzyna1();
@@ -185,7 +185,7 @@ public:
             druzyna3();
 
         }
-        if (dr4 > dr1 > dr3 > dr2)
+        if (pkt4 > pkt1 > pkt3 > pkt2)
         {
             druzyna4();
             druzyna1();
@@ -193,7 +193,7 @@ public:
             druzyna2();
 
         }
-        if (dr4 > dr2 > dr1 > dr3)
+        if (pkt4 > pkt2 > pkt1 > pkt3)
         {
             druzyna4();
             druzyna2();
@@ -201,7 +201,7 @@ public:
             druzyna3();
 
         }
-        if (dr4 > dr2 > dr3 > dr1)
+        if (pkt4 > pkt2 > pkt3 > pkt1)
         {
             druzyna4();
             druzyna2();
@@ -209,7 +209,7 @@ public:
             druzyna1();
 
         }
-        if (dr4 > dr3 > dr2 > dr1)
+        if (pkt4 > pkt3 > pkt2 > pkt1)
         {
             druzyna4();
             druzyna3();
@@ -217,7 +217,7 @@ public:
             druzyna1();
 
         }
-        if (dr4 > dr3 > dr1 > dr2)
+        if (pkt4 > pkt3 > pkt1 > pkt2)
         {
             druzyna4();
             druzyna3();
