@@ -230,14 +230,14 @@ public:
 
 
 };
-//
-//int bramki()
-//{
-//    int bramki;
-//    srand(time(NULL));
-//    bramki = rand() % 6 + 1;
-//    return bramki;
-//}
+
+int bramki()
+{
+    int bramki;
+    srand(time(NULL));
+    bramki = rand() % 6 + 1;
+    return bramki;
+}
 double szansa1(int waga1,int waga2)
 {
    double szansa1;
@@ -255,6 +255,41 @@ double szansa2(int waga1,int waga2)
 //    int dr1p, dr2p, dr1m, dr2m;
 //
 //}
+void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2)
+{
+    int gol1 = 0;
+    int gol2 = 0;
+    
+    for (int i = 0; i < bramki(); i++)
+    {
+        int gol = rand() % 101;
+        if (gol<szansa1(waga1,waga2))
+        {
+            gol1 = gol1 + 1;
+            bil1 = &bil1 + 1;
+            bil2 = &bil2 - 1;
+        }
+        else
+        {
+            gol2 = gol2 + 1;
+            bil1 = &bil1 - 1;
+            bil2 = &bil2 + 1;
+        }
+    }
+    if (gol1>gol2)
+    {
+        dr1 = &dr1 + 3;
+    }
+    else if (gol2>gol1)
+    {
+        dr2 = &dr2 + 3;
+    }
+    else if(gol1=gol2)
+    {
+        dr1 = &dr1 = 1;
+        dr2 = &dr2 = 1;
+    }
+}
 
 int main()
 {
@@ -262,6 +297,8 @@ int main()
     int b = 6;
     cout << "szansa pierwszego zespolu to: " << szansa1(a, b) << "%" << endl;
     cout << "szansa drugiego zespolu to: " << szansa2(a, b) << "%"<<endl;
+
+
     /* JAK MA WYGLĄDAĆ WYWOŁANIE KLASY?:
     
     grupa gr1;
@@ -280,6 +317,10 @@ int main()
     gr1.group="A";
     gr1.tabela();
     */
+
+
+
+    
 }
 
 
