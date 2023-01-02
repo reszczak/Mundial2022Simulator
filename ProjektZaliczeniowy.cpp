@@ -11,10 +11,10 @@ class grupa
 {
 public:
     string dr1, dr2, dr3, dr4;
-    int pkt1, pkt2, pkt3, pkt4;
-    int bil1, bil2, bil3, bil4;
+    int *pkt1, *pkt2, *pkt3, *pkt4;
+    int *bil1, *bil2, *bil3, *bil4;
     string group;
-    void druzyna1() 
+    void druzyna1()
     {
         cout << dr1 << " " << pkt1 << " " << bil1 << endl;;
     }
@@ -30,206 +30,207 @@ public:
     {
         cout << dr4 << " " << pkt4 << " " << bil4 << endl;;
     }
-    
-    void tabela() 
-    {
-        if (dr1>dr2>dr3>dr4)
-        {
-            druzyna1();
-            druzyna2();
-            druzyna3();
-            druzyna4();
-           
-        }
-        if (dr1 > dr2 > dr4 > dr3)
-        {
-            druzyna1();
-            druzyna2();
-            druzyna4();
-            druzyna3();
-
-        }
-        if (dr1 > dr3 > dr2 > dr4)
-        {
-            druzyna1();
-            druzyna3();
-            druzyna2();
-            druzyna4();
-
-        }
-        if (dr1 > dr3 > dr4 > dr2)
-        {
-            druzyna1();
-            druzyna3();
-            druzyna4();
-            druzyna2();
-
-        }
-        if (dr1 > dr4 > dr3 > dr2)
-        {
-            druzyna1();
-            druzyna4();
-            druzyna3();
-            druzyna2();
-
-        }
-        if (dr1 > dr4 > dr2 > dr3)
-        {
-            druzyna1();
-            druzyna4();
-            druzyna2();
-            druzyna3();
-
-        }
-        if (dr2 > dr1 > dr3 > dr4)
-        {
-            druzyna2();
-            druzyna1();
-            druzyna3();
-            druzyna4();
-
-        }
-        if (dr2 > dr1 > dr4 > dr3)
-        {
-            druzyna2();
-            druzyna1();
-            druzyna4();
-            druzyna3();
-
-        }
-        if (dr2 > dr3 > dr1 > dr4)
-        {
-            druzyna2();
-            druzyna3();
-            druzyna1();
-            druzyna4();
-
-        }
-        if (dr2 > dr3 > dr4 > dr1)
-        {
-            druzyna2();
-            druzyna3();
-            druzyna4();
-            druzyna1();
-
-        }
-        if (dr2 > dr4 > dr3 > dr1)
-        {
-            druzyna2();
-            druzyna4();
-            druzyna3();
-            druzyna1();
-
-        }
-        if (dr2 > dr4 > dr1 > dr3)
-        {
-            druzyna2();
-            druzyna4();
-            druzyna1();
-            druzyna3();
-
-        }
-        if (dr3 > dr1 > dr2 > dr4)
-        {
-            druzyna3();
-            druzyna1();
-            druzyna2();
-            druzyna4();
-
-        }
-        if (dr3 > dr1 > dr4 > dr2)
-        {
-            druzyna3();
-            druzyna1();
-            druzyna4();
-            druzyna2();
-
-        }
-        if (dr3 > dr2 > dr1 > dr4)
-        {
-            druzyna3();
-            druzyna2();
-            druzyna1();
-            druzyna4();
-
-        }
-        if (dr3 > dr2 > dr4 > dr1)
-        {
-            druzyna3();
-            druzyna2();
-            druzyna4();
-            druzyna1();
-
-        }
-        if (dr3 > dr4 > dr2 > dr1)
-        {
-            druzyna3();
-            druzyna4();
-            druzyna2();
-            druzyna1();
-
-        }
-        if (dr3 > dr4 > dr1 > dr2)
-        {
-            druzyna3();
-            druzyna4();
-            druzyna1();
-            druzyna2();
-
-        }
-        if (dr4 > dr1 > dr2 > dr3)
-        {
-            druzyna4();
-            druzyna1();
-            druzyna2();
-            druzyna3();
-
-        }
-        if (dr4 > dr1 > dr3 > dr2)
-        {
-            druzyna4();
-            druzyna1();
-            druzyna3();
-            druzyna2();
-
-        }
-        if (dr4 > dr2 > dr1 > dr3)
-        {
-            druzyna4();
-            druzyna2();
-            druzyna1();
-            druzyna3();
-
-        }
-        if (dr4 > dr2 > dr3 > dr1)
-        {
-            druzyna4();
-            druzyna2();
-            druzyna3();
-            druzyna1();
-
-        }
-        if (dr4 > dr3 > dr2 > dr1)
-        {
-            druzyna4();
-            druzyna3();
-            druzyna2();
-            druzyna1();
-
-        }
-        if (dr4 > dr3 > dr1 > dr2)
-        {
-            druzyna4();
-            druzyna3();
-            druzyna1();
-            druzyna2();
-
-        }
-    
-    }
-
-
-};
+}
+  /*  
+//    void tabela() 
+//    {
+//        if (dr1>dr2>dr3>dr4)
+//        {
+//            druzyna1();
+//            druzyna2();
+//            druzyna3();
+//            druzyna4();
+//           
+//        }
+//        if (dr1 > dr2 > dr4 > dr3)
+//        {
+//            druzyna1();
+//            druzyna2();
+//            druzyna4();
+//            druzyna3();
+//
+//        }
+//        if (dr1 > dr3 > dr2 > dr4)
+//        {
+//            druzyna1();
+//            druzyna3();
+//            druzyna2();
+//            druzyna4();
+//
+//        }
+//        if (dr1 > dr3 > dr4 > dr2)
+//        {
+//            druzyna1();
+//            druzyna3();
+//            druzyna4();
+//            druzyna2();
+//
+//        }
+//        if (dr1 > dr4 > dr3 > dr2)
+//        {
+//            druzyna1();
+//            druzyna4();
+//            druzyna3();
+//            druzyna2();
+//
+//        }
+//        if (dr1 > dr4 > dr2 > dr3)
+//        {
+//            druzyna1();
+//            druzyna4();
+//            druzyna2();
+//            druzyna3();
+//
+//        }
+//        if (dr2 > dr1 > dr3 > dr4)
+//        {
+//            druzyna2();
+//            druzyna1();
+//            druzyna3();
+//            druzyna4();
+//
+//        }
+//        if (dr2 > dr1 > dr4 > dr3)
+//        {
+//            druzyna2();
+//            druzyna1();
+//            druzyna4();
+//            druzyna3();
+//
+//        }
+//        if (dr2 > dr3 > dr1 > dr4)
+//        {
+//            druzyna2();
+//            druzyna3();
+//            druzyna1();
+//            druzyna4();
+//
+//        }
+//        if (dr2 > dr3 > dr4 > dr1)
+//        {
+//            druzyna2();
+//            druzyna3();
+//            druzyna4();
+//            druzyna1();
+//
+//        }
+//        if (dr2 > dr4 > dr3 > dr1)
+//        {
+//            druzyna2();
+//            druzyna4();
+//            druzyna3();
+//            druzyna1();
+//
+//        }
+//        if (dr2 > dr4 > dr1 > dr3)
+//        {
+//            druzyna2();
+//            druzyna4();
+//            druzyna1();
+//            druzyna3();
+//
+//        }
+//        if (dr3 > dr1 > dr2 > dr4)
+//        {
+//            druzyna3();
+//            druzyna1();
+//            druzyna2();
+//            druzyna4();
+//
+//        }
+//        if (dr3 > dr1 > dr4 > dr2)
+//        {
+//            druzyna3();
+//            druzyna1();
+//            druzyna4();
+//            druzyna2();
+//
+//        }
+//        if (dr3 > dr2 > dr1 > dr4)
+//        {
+//            druzyna3();
+//            druzyna2();
+//            druzyna1();
+//            druzyna4();
+//
+//        }
+//        if (dr3 > dr2 > dr4 > dr1)
+//        {
+//            druzyna3();
+//            druzyna2();
+//            druzyna4();
+//            druzyna1();
+//
+//        }
+//        if (dr3 > dr4 > dr2 > dr1)
+//        {
+//            druzyna3();
+//            druzyna4();
+//            druzyna2();
+//            druzyna1();
+//
+//        }
+//        if (dr3 > dr4 > dr1 > dr2)
+//        {
+//            druzyna3();
+//            druzyna4();
+//            druzyna1();
+//            druzyna2();
+//
+//        }
+//        if (dr4 > dr1 > dr2 > dr3)
+//        {
+//            druzyna4();
+//            druzyna1();
+//            druzyna2();
+//            druzyna3();
+//
+//        }
+//        if (dr4 > dr1 > dr3 > dr2)
+//        {
+//            druzyna4();
+//            druzyna1();
+//            druzyna3();
+//            druzyna2();
+//
+//        }
+//        if (dr4 > dr2 > dr1 > dr3)
+//        {
+//            druzyna4();
+//            druzyna2();
+//            druzyna1();
+//            druzyna3();
+//
+//        }
+//        if (dr4 > dr2 > dr3 > dr1)
+//        {
+//            druzyna4();
+//            druzyna2();
+//            druzyna3();
+//            druzyna1();
+//
+//        }
+//        if (dr4 > dr3 > dr2 > dr1)
+//        {
+//            druzyna4();
+//            druzyna3();
+//            druzyna2();
+//            druzyna1();
+//
+//        }
+//        if (dr4 > dr3 > dr1 > dr2)
+//        {
+//            druzyna4();
+//            druzyna3();
+//            druzyna1();
+//            druzyna2();
+//
+//        }
+//    
+//    }
+//
+//
+//};
 
 int bramki()
 {
@@ -250,11 +251,7 @@ double szansa2(double waga1, double waga2)
     szansa2 = (waga2 / (waga1 + waga2)) * 100;
     return szansa2;
 }
-//int mecz1(int dr1, int dr2) 
-//{
-//    int dr1p, dr2p, dr1m, dr2m;
-//
-//}
+
 void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2)
 {
     int gol1 = 0;
@@ -296,10 +293,7 @@ void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2)
 
 int main()
 {
-    int a = 4;
-    int b = 6;
-    cout << "szansa pierwszego zespolu to: " << szansa1(a, b) << "%" << endl;
-    cout << "szansa drugiego zespolu to: " << szansa2(a, b) << "%"<<endl;
+
 
 
     /* JAK MA WYGLĄDAĆ WYWOŁANIE KLASY?:
@@ -323,7 +317,7 @@ int main()
 
 
 
-    
+    return 0;
 }
 
 
