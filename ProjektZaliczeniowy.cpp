@@ -260,11 +260,10 @@ void puchary(int* dr1, int* dr2, double waga1, double waga2, int* wynik1, int* w
 
 int main()
 {
-    const int size = 32
+    const int size = 32;
     int* points = new int[size];
     int* balance = new int[size];
     double* grade = new double[size];
-    string* name = new string[size];
     string* group = new string[size];
     string* team = new string[size];
    
