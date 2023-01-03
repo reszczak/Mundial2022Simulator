@@ -20,7 +20,7 @@ public:
 };
 
 
-class grupa;
+class grupa
 {
 public:
     
@@ -28,9 +28,9 @@ public:
 
 
 }; 
-class turniej;
+class turniej
 {
-public:
+public: 
 
 
 };
