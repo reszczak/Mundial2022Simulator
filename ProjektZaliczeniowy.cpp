@@ -300,11 +300,16 @@ int main()
     int bilans2 = 0;
     int wag1 = 6;
     int wag2 = 4;
+    int bilans3 = -1;
+    int pkt3 = 0;
+    string druzyna3 = "Arabia";
+    int wag3 = 2;
     string druzyna1 = "Polska";
     string druzyna2 = "Francja";
     cout << "Mecz 1:" << endl;
     mecz(&pkt1, &pkt2, &bilans1, &bilans2, wag1, wag2, druzyna1, druzyna2); cout << "Punkty1: " << pkt1 << "  Bilans1: " << bilans1 << endl; cout << "Punkty2: " << pkt2 << "  Bilans2: " << bilans2 << endl << endl;
-
+    cout << endl << endl << endl;
+    mecz(&pkt1, &pkt3, &bilans1, &bilans3, wag1, wag3, druzyna1, druzyna3); cout << "Punkty1: " << pkt1 << "  Bilans1: " << bilans1 << endl; cout << "Punkty3: " << pkt3 << "  Bilans3: " << bilans3 << endl << endl;
 
 
     /* JAK MA WYGLĄDAĆ WYWOŁANIE KLASY?:
@@ -329,7 +334,7 @@ int main()
 
 
     return 0;
-}
+ }
 
 
 
