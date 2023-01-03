@@ -8,6 +8,33 @@
 #include <conio.h>
 
 using namespace std;
+class druzyna
+{
+public:
+    int* ocena;
+    int* punkty;
+    int* bilans;
+    string* nazwa;
+    string* JakaGrupa;
+
+};
+
+
+class grupa;
+{
+public:
+    
+
+
+
+}; 
+class turniej;
+{
+public:
+
+
+};
+
 
 double bramki()
 {
@@ -233,48 +260,329 @@ void puchary(int* dr1, int* dr2, double waga1, double waga2, int* wynik1, int* w
 
 int main()
 {
-    int pkt1 = 0;
-    int pkt2 = 0;
-    int bilans1 = 0;
-    int bilans2 = 0;
-    int wag1 = 5;
-    int wag2 = 5;
-    int bilans3 = -1;
-    int pkt3 = 0;
-    int wynik1 = 0;
-    int wynik2 = 0;
-    string druzyna3 = "Arabia";
-    int wag3 = 2;
-    string druzyna1 = "Polska";
-    string druzyna2 = "Francja";
-    cout << "Mecz 1:" << endl;
-    mecz(&pkt1, &pkt2, &bilans1, &bilans2, wag1, wag2, druzyna1, druzyna2); cout << "Punkty1: " << pkt1 << "  Bilans1: " << bilans1 << endl; cout << "Punkty2: " << pkt2 << "  Bilans2: " << bilans2 << endl << endl;
-    cout << endl << endl << endl;
-    mecz(&pkt1, &pkt3, &bilans1, &bilans3, wag1, wag3, druzyna1, druzyna3); cout << "Punkty1: " << pkt1 << "  Bilans1: " << bilans1 << endl; cout << "Punkty3: " << pkt3 << "  Bilans3: " << bilans3 << endl << endl;
+    const int size = 32
+    int* points = new int[size];
+    int* balance = new int[size];
+    double* grade = new double[size];
+    string* name = new string[size];
+    string* group = new string[size];
+    string* team = new string[size];
+   
+    //Grupa A
+    druzyna holandia;
+        holandia.ocena = grade[0];
+        holandia.punkty = points[0];
+        holandia.bilans = balance[0];
+        holandia.nazwa = team[0];
+        holandia.JakaGrupa = group[0];
+    druzyna senegal;
+        senegal.ocena = grade[1];
+        senegal.punkty = points[1];
+        senegal.bilans = balance[1];
+        senegal.nazwa = team[1];
+        senegal.JakaGrupa = group[1];
+    druzyna ekwador;
+        ekwador.ocena = grade[2];
+        ekwador.punkty = points[2];
+        ekwador.bilans = balance[2];
+        ekwador.nazwa = team[2];
+        ekwador.JakaGrupa = group[2];
+    druzyna katar;
+        katar.ocena = grade[3];
+        katar.punkty = points[3];
+        katar.bilans = balance[3];
+        katar.nazwa = team[3];
+        katar.JakaGrupa = group[3];
+    //Grupa B
+    druzyna anglia;
+        anglia.ocena = grade[4];
+        anglia.punkty = points[4];
+        anglia.bilans = balance[4];
+        anglia.nazwa = team[4];
+        anglia.JakaGrupa = group[4];
+    druzyna usa;
+        usa.ocena = grade[5];
+        usa.punkty = points[5];
+        usa.bilans = balance[5];
+        usa.nazwa = team[5];
+        usa.JakaGrupa = group[5];
+    druzyna iran;
+        iran.ocena = grade[6];
+        iran.punkty = points[6];
+        iran.bilans = balance[6];
+        iran.nazwa = team[6];
+        iran.JakaGrupa = group[6];
+    druzyna walia;
+        walia.ocena = grade[7];
+        walia.punkty = points[7];
+        walia.bilans = balance[7];
+        walia.nazwa = team[7];
+        walia.JakaGrupa = group[7];
+        //grupaC
+    druzyna argentyna;
+        argentyna.ocena = grade[8];
+        argentyna.punkty = points[8];
+        argentyna.bilans = balance[8];
+        argentyna.nazwa = team[8];
+        argentyna.JakaGrupa = group[8];
+    druzyna polska;
+        polska.ocena = grade[9];
+        polska.punkty = points[9];
+        polska.bilans = balance[9];
+        polska.nazwa = team[9];
+        polska.JakaGrupa = group[9];
+    druzyna meksyk;
+        meksyk.ocena = grade[10];
+        meksyk.punkty = points[10];
+        meksyk.bilans = balance[10];
+        meksyk.nazwa = team[10];
+        meksyk.JakaGrupa = group[10];
+    druzyna arabia;
+        arabia.ocena = grade[11];
+        arabia.punkty = points[11];
+        arabia.bilans = balance[11];
+        arabia.nazwa = team[11];
+        arabia.JakaGrupa = group[11];
+        //grupaD
+    druzyna francja;
+        francja.ocena = grade[12];
+        francja.punkty = points[12];
+        francja.bilans = balance[12];
+        francja.nazwa = team[12];
+        francja.JakaGrupa = group[12];
+    druzyna australia;
+        australia.ocena = grade[13];
+        australia.punkty = points[13];
+        australia.bilans = balance[13];
+        australia.nazwa = team[13];
+        australia.JakaGrupa = group[13];
+    druzyna tunezja;
+        tunezja.ocena = grade[14];
+        tunezja.punkty = points[14];
+        tunezja.bilans = balance[14];
+        tunezja.nazwa = team[14];
+        tunezja.JakaGrupa = group[14];
+    druzyna dania;
+        dania.ocena = grade[15];
+        dania.punkty = points[15];
+        dania.bilans = balance[15];
+        dania.nazwa = team[15];
+        dania.JakaGrupa = group[15];
+        //grupaE
+    druzyna japonia;
+        japonia.ocena = grade[16];
+        japonia.punkty = points[16];
+        japonia.bilans = balance[16];
+        japonia.nazwa = team[16];
+        japonia.JakaGrupa = group[16];
+    druzyna hiszpania;
+        hiszpania.ocena = grade[17];
+        hiszpania.punkty = points[17];
+        hiszpania.bilans = balance[17];
+        hiszpania.nazwa = team[17];
+        hiszpania.JakaGrupa = group[17];
+    druzyna niemcy;
+        niemcy.ocena = grade[18];
+        niemcy.punkty = points[18];
+        niemcy.bilans = balance[18];
+        niemcy.nazwa = team[18];
+        niemcy.JakaGrupa = group[18];
+    druzyna kostaryka;
+        kostaryka.ocena = grade[19];
+        kostaryka.punkty = points[19];
+        kostaryka.bilans = balance[19];
+        kostaryka.nazwa = team[19];
+        kostaryka.JakaGrupa = group[19];
+        //grupaF
+    druzyna maroko;
+        maroko.ocena = grade[20];
+        maroko.punkty = points[20];
+        maroko.bilans = balance[20];
+        maroko.nazwa = team[20];
+        maroko.JakaGrupa = group[20];
+    druzyna chorwacja;
+        chorwacja.ocena = grade[21];
+        chorwacja.punkty = points[21];
+        chorwacja.bilans = balance[21];
+        chorwacja.nazwa = team[21];
+        chorwacja.JakaGrupa = group[21];
+    druzyna belgia;
+        belgia.ocena = grade[22];
+        belgia.punkty = points[22];
+        belgia.bilans = balance[22];
+        belgia.nazwa = team[22];
+        belgia.JakaGrupa = group[22];
+    druzyna kanada;
+        kanada.ocena = grade[23];
+        kanada.punkty = points[23];
+        kanada.bilans = balance[23];
+        kanada.nazwa = team[23];
+        kanada.JakaGrupa = group[23];
+        //grupaG
+    druzyna brazylia;
+        brazylia.ocena = grade[24];
+        brazylia.punkty = points[24];
+        brazylia.bilans = balance[24];
+        brazylia.nazwa = team[24];
+        brazylia.JakaGrupa = group[24];
+    druzyna szwajcaria;
+        szwajcaria.ocena = grade[25];
+        szwajcaria.punkty = points[25];
+        szwajcaria.bilans = balance[25];
+        szwajcaria.nazwa = team[25];
+        szwajcaria.JakaGrupa = group[25];
+    druzyna kamerun;
+        kamerun.ocena = grade[26];
+        kamerun.punkty = points[26];
+        kamerun.bilans = balance[26];
+        kamerun.nazwa = team[26];
+        kamerun.JakaGrupa = group[26];
+    druzyna serbia;
+        serbia.ocena = grade[27];
+        serbia.punkty = points[27];
+        serbia.bilans = balance[27];
+        serbia.nazwa = team[27];
+        serbia.JakaGrupa = group[27];
+        //grupaH
+    druzyna portugalia;
+        portugalia.ocena = grade[28];
+        portugalia.punkty = points[28];
+        portugalia.bilans = balance[28];
+        portugalia.nazwa = team[28];
+        portugalia.JakaGrupa = group[28];
+    druzyna korea;
+        korea.ocena = grade[29];
+        korea.punkty = points[29];
+        korea.bilans = balance[29];
+        korea.nazwa = team[29];
+        korea.JakaGrupa = group[29];
+    druzyna urugwaj;
+        urugwaj.ocena = grade[30];
+        urugwaj.punkty = points[30];
+        urugwaj.bilans = balance[30];
+        urugwaj.nazwa = team[30];
+        urugwaj.JakaGrupa = group[30];
+    druzyna ghana;
+        ghana.ocena = grade[31];
+        ghana.punkty = points[31];
+        ghana.bilans = balance[31];
+        ghana.nazwa = team[31];
+        ghana.JakaGrupa = group[31];
 
-    cout << endl << endl << endl << endl;
-    puchary(&pkt1, &pkt2, wag1, wag2, &wynik1, &wynik2, druzyna1, druzyna2);
-    /* JAK MA WYGLĄDAĆ WYWOŁANIE KLASY?:
-
-    grupa gr1;
-    gr1.dr1=druzyna1;
-     gr1.dr2=druzyna2;
-      gr1.dr3=druzyna3;
-       gr1.dr4=druzyna4;
-    gr1.pkt1 = punkty1;
-     gr1.pkt2 = punkty2;
-      gr1.pkt3 = punkty3;
-       gr1.pkt4 = punkty4;
-    gr1.bil1=bilans1;
-     gr1.bil2=bilans2;
-      gr1.bil3=bilans3;
-       gr1.bil4=bilans4;
-    gr1.group="A";
-    gr1.tabela();
-    */
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//int pkt1 = 0;
+//int pkt2 = 0;
+//int bilans1 = 0;
+//int bilans2 = 0;
+//int wag1 = 5;
+//int wag2 = 5;
+//int bilans3 = -1;
+//int pkt3 = 0;
+//int wynik1 = 0;
+//int wynik2 = 0;
+//string druzyna3 = "Arabia";
+//int wag3 = 2;
+//string druzyna1 = "Polska";
+//string druzyna2 = "Francja";
+//cout << "Mecz 1:" << endl;
+//mecz(&pkt1, &pkt2, &bilans1, &bilans2, wag1, wag2, druzyna1, druzyna2); cout << "Punkty1: " << pkt1 << "  Bilans1: " << bilans1 << endl; cout << "Punkty2: " << pkt2 << "  Bilans2: " << bilans2 << endl << endl;
+//cout << endl << endl << endl;
+//mecz(&pkt1, &pkt3, &bilans1, &bilans3, wag1, wag3, druzyna1, druzyna3); cout << "Punkty1: " << pkt1 << "  Bilans1: " << bilans1 << endl; cout << "Punkty3: " << pkt3 << "  Bilans3: " << bilans3 << endl << endl;
+//
+//cout << endl << endl << endl << endl;
+//puchary(&pkt1, &pkt2, wag1, wag2, &wynik1, &wynik2, druzyna1, druzyna2);
     return 0;
 }
 
