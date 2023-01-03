@@ -85,10 +85,12 @@ void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, 
     }
     cout << "Wynik meczu: " << druzyna1 << " - " << druzyna2 << "     " << gol1 << " - " << gol2 << endl;
 }
-void puchary(int* dr1, int*dr2, double waga1, double waga2,string druzyna1,string druzyna2) 
+void puchary(int* dr1, int*dr2, double waga1, double waga2,int* wynik1,int*wynik2,string druzyna1,string druzyna2) 
 {
     *dr1 = 0;
     *dr2 = 0;
+    *wynik1 = 0;
+    *wynik2 = 0;
     int gol1 = 0;
     int gol2 = 0;
     int gol[6];
@@ -109,18 +111,26 @@ void puchary(int* dr1, int*dr2, double waga1, double waga2,string druzyna1,strin
             *dr2 = *dr2 + 1;
         }
     }
+    if (*dr1 > *dr2)
+    {
+        *wynik1 = *wynik1 + 1;
+    }
+    else
+    {
+        *wynik2 = *wynik2 + 1;
+    }
     if (*dr1==*dr2)
     {
         cout << "DOGRYWKA:" << endl;
         dogrywka(&dr1, &dr2, waga1, waga2, druzyna1, druzyna2);
         if (*dr1 == *dr2)
         {
-
+            karne(&dr1, &dr2,*wynik1,*wynik2, druzyna1, druzyna2);
         }
             
     }
 }
-void dogrywka(int* dr1, int* dr2, double waga1, double waga2, string druzyna1, string druzyna2)
+void dogrywka(int* dr1, int* dr2, double waga1, double waga2, int* wynik1, int* wynik2, string druzyna1, string druzyna2)
 {
     int gol1 = 0;
     int gol2 = 0;
@@ -142,6 +152,14 @@ void dogrywka(int* dr1, int* dr2, double waga1, double waga2, string druzyna1, s
             *dr2 = *dr2 + 1;
         }
     }
+    if (*dr1 > *dr2)
+    {
+        *wynik1 = *wynik1 + 1;
+    }
+    else
+    {
+        *wynik2 = *wynik2 + 1;
+    }
 }
 int randomKarne()
 {
@@ -150,7 +168,7 @@ int randomKarne()
     int czygol = rand() % 2;
     return czygol;
 }
-void karne(int* dr1, int* dr2, string druzyna1, string druzyna2)
+void karne(int* dr1, int* dr2, int* wynik1, int* wynik2, string druzyna1, string druzyna2)
 {
     int gol1 = 0;
     int gol2 = 0;
@@ -193,6 +211,14 @@ void karne(int* dr1, int* dr2, string druzyna1, string druzyna2)
         cout << "seria " << seria << " : " << gol1 << " - " << gol2 << endl;
         seria++;
 
+    }
+    if (gol1>gol2)
+    {
+        *wynik1 = *wynik1 + 1;
+    }
+    else
+    {
+        *wynik2 = *wynik2 + 1;
     }
 
     cout << " Wynik: " << druzyna1 << "  " << dr1 << " (" << gol1 << ")  -  " << dr2 << " (" << gol2 << ")  " << druzyna2 << endl;
