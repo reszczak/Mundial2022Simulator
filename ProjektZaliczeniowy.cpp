@@ -11,28 +11,28 @@ class grupa
 {
 public:
     string dr1, dr2, dr3, dr4;
-    int *pkt1, *pkt2, *pkt3, *pkt4;
-    int *bil1, *bil2, *bil3, *bil4;
+    int* pkt1, * pkt2, * pkt3, * pkt4;
+    int* bil1, * bil2, * bil3, * bil4;
     string group;
     void druzyna1()
     {
-        cout << dr1 << " " << pkt1 << " " << bil1 << endl;;
+        cout << dr1 << " " << pkt1 << " " << bil1 << endl;
     }
     void druzyna2()
     {
-        cout << dr2 << " " << pkt2 << " " << bil2 << endl;;
+        cout << dr2 << " " << pkt2 << " " << bil2 << endl;
     }
     void druzyna3()
     {
-        cout << dr3 << " " << pkt3 << " " << bil3 << endl;;
+        cout << dr3 << " " << pkt3 << " " << bil3 << endl;
     }
     void druzyna4()
     {
-        cout << dr4 << " " << pkt4 << " " << bil4 << endl;;
+        cout << dr4 << " " << pkt4 << " " << bil4 << endl;
     }
-}
-  /*  
-//    void tabela() 
+};
+/*
+//    void tabela()
 //    {
 //        if (dr1>dr2>dr3>dr4)
 //        {
@@ -40,7 +40,7 @@ public:
 //            druzyna2();
 //            druzyna3();
 //            druzyna4();
-//           
+//
 //        }
 //        if (dr1 > dr2 > dr4 > dr3)
 //        {
@@ -226,13 +226,13 @@ public:
 //            druzyna2();
 //
 //        }
-//    
+//
 //    }
 //
 //
 //};*/
 
-int bramki()
+double bramki()
 {
     int bramki;
     srand(time(NULL));
@@ -252,16 +252,16 @@ double szansa2(double waga1, double waga2)
     return szansa2;
 }
 
-void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2)
+void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, string druzyna1, string druzyna2)
 {
     int gol1 = 0;
     int gol2 = 0;
-
+    int gol[10];
     for (int i = 0; i < bramki(); i++)
     {
         srand(time(NULL));
-        int gol = rand() % 101;
-        if (gol < szansa1(waga1, waga2))
+        gol[i] = rand() % 101;
+        if (gol[i] < szansa1(waga1, waga2))
         {
             gol1 = gol1 + 1;
             *bil1 = *bil1 + 1;
@@ -287,17 +287,27 @@ void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2)
         *dr1 = *dr1 + 1;
         *dr2 = *dr2 + 1;
     }
-    cout << "Wynik meczu: " << gol1 << " - " << gol2 << endl;
+    cout << "Wynik meczu: " << druzyna1 << " - " << druzyna2 << "     " << gol1 << " - " << gol2 << endl;
 }
 
 
 int main()
 {
+    int pkt1 = 0;
+    int pkt2 = 0;
+    int bilans1 = 0;
+    int bilans2 = 0;
+    int wag1 = 6;
+    int wag2 = 4;
+    string druzyna1 = "Polska";
+    string druzyna2 = "Francja";
+    cout << "Mecz 1:" << endl;
+    mecz(&pkt1, &pkt2, &bilans1, &bilans2, wag1, wag2, druzyna1, druzyna2); cout << "Punkty1: " << pkt1 << "  Bilans1: " << bilans1 << endl; cout << "Punkty2: " << pkt2 << "  Bilans2: " << bilans2 << endl << endl;
 
 
 
     /* JAK MA WYGLĄDAĆ WYWOŁANIE KLASY?:
-    
+
     grupa gr1;
     gr1.dr1=druzyna1;
      gr1.dr2=druzyna2;
@@ -319,5 +329,3 @@ int main()
 
     return 0;
 }
-
-
