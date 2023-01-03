@@ -257,7 +257,8 @@ void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, 
     int gol1 = 0;
     int gol2 = 0;
     int gol[10];
-    for (int i = 0; i < bramki(); i++)
+    const int size = bramki();
+    for (int i = 0; i < size; i++)
     {
         srand(time(NULL));
         gol[i] = rand() % 101;
