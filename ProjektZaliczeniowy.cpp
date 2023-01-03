@@ -143,6 +143,59 @@ void dogrywka(int* dr1, int* dr2, double waga1, double waga2, string druzyna1, s
         }
     }
 }
+int randomKarne()
+{
+    Sleep(400);
+    srand(time(NULL));
+    int czygol = rand() % 2;
+    return czygol;
+}
+void karne(int* dr1, int* dr2, string druzyna1, string druzyna2)
+{
+    int gol1 = 0;
+    int gol2 = 0;
+    int seria = 1;
+    for (int i = 0; i < 5; i++)
+    {
+        if (randomKarne() == 1)
+        {
+            gol1 = gol1 + 1;
+
+        }
+        if (randomKarne() == 1)
+        {
+            gol2 = gol2 + 1;
+
+        }
+        cout << "seria " << seria << " : " << gol1 << " - " << gol2 << endl;
+        seria++;
+        if (i > 2)
+        {
+            if (((gol1 == 3) && (gol2 == 0)) || ((gol1 == 0) && (gol2 == 3)) || ((gol1 == 4) && (gol2 == 1)) || ((gol1 == 1) && (gol2 == 4)))
+            {
+                break;
+            }
+
+        }
+    }
+    while ((gol1 == gol2))
+    {
+        if (randomKarne() == 1)
+        {
+            gol1 = gol1 + 1;
+
+        }
+        if (randomKarne() == 1)
+        {
+            gol2 = gol2 + 1;
+
+        }
+        cout << "seria " << seria << " : " << gol1 << " - " << gol2 << endl;
+        seria++;
+
+    }
+
+    cout << " Wynik: " << druzyna1 << "  " << dr1 << " (" << gol1 << ")  -  " << dr2 << " (" << gol2 << ")  " << druzyna2 << endl;
 
 int main()
 {
