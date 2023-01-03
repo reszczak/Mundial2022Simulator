@@ -5,7 +5,26 @@
 #include <stdlib.h>     
 #include <time.h> 
 #include <conio.h>
+
 using namespace std;
+void spowolnienie()
+{
+    srand(time(NULL));
+    int tab[6000];
+    for (int i = 0; i < 6000; i++)
+    {
+        tab[i] = rand() % 1500;
+    }
+    for (int i = 0; i < 6000; i++)
+    {
+        for (int j = 0; j < 6000 - 1; j++)
+        {
+            if (tab[j] > tab[j + 1])
+                swap(tab[j], tab[j + 1]);
+
+        }
+    }
+}
 
 class grupa
 {
@@ -234,6 +253,7 @@ public:
 
 double bramki()
 {
+    
     int bramki;
     srand(time(NULL));
     bramki = rand() % 6 + 1;
@@ -258,9 +278,11 @@ void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, 
     int gol2 = 0;
     int gol[10];
     const int size = bramki();
+
     for (int i = 0; i < size; i++)
     {
         srand(time(NULL));
+        spowolnienie();
         gol[i] = rand() % 101;
         if (gol[i] < szansa1(waga1, waga2))
         {
@@ -334,7 +356,7 @@ int main()
 
 
     return 0;
- }
+}
 
 
 
