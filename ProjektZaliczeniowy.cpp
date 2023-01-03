@@ -18,6 +18,15 @@ double bramki()
     bramki = rand() % 6;
     return bramki;
 }
+double bramkiPuchar()
+{
+
+    int bramki;
+    srand(time(NULL));
+    Sleep(1000);
+    bramki = rand() % 2;
+    return bramki;
+}
 double szansa1(double waga1, double waga2)
 {
     double szansa1;
@@ -35,7 +44,7 @@ void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, 
 {
     int gol1 = 0;
     int gol2 = 0;
-    int gol[10];
+    int gol[6];
     const int size = bramki();
 
     for (int i = 0; i < size; i++)
@@ -76,7 +85,64 @@ void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, 
     }
     cout << "Wynik meczu: " << druzyna1 << " - " << druzyna2 << "     " << gol1 << " - " << gol2 << endl;
 }
+void puchary(int* dr1, int*dr2, double waga1, double waga2,string druzyna1,string druzyna2) 
+{
+    *dr1 = 0;
+    *dr2 = 0;
+    int gol1 = 0;
+    int gol2 = 0;
+    int gol[6];
+    const int size = bramki();
+    for (int i = 0; i < size; i++)
+    {
+        Sleep(100);
+        srand(time(NULL));
+        gol[i] = rand() % 101;
+        if (gol[i] < szansa1(waga1, waga2))
+        {
+           
+            *dr1 = *dr1 + 1;
+           
+        }
+        else
+        {
+            *dr2 = *dr2 + 1;
+        }
+    }
+    if (*dr1==*dr2)
+    {
+        cout << "DOGRYWKA:" << endl;
+        dogrywka(&dr1, &dr2, waga1, waga2, druzyna1, druzyna2);
+        if (*dr1 == *dr2)
+        {
 
+        }
+            
+    }
+}
+void dogrywka(int* dr1, int* dr2, double waga1, double waga2, string druzyna1, string druzyna2)
+{
+    int gol1 = 0;
+    int gol2 = 0;
+    int gol[6];
+    const int size = bramkiPuchar();
+    for (int i = 0; i < size; i++)
+    {
+        Sleep(100);
+        srand(time(NULL));
+        gol[i] = rand() % 101;
+        if (gol[i] < szansa1(waga1, waga2))
+        {
+
+            *dr1 = *dr1 + 1;
+
+        }
+        else
+        {
+            *dr2 = *dr2 + 1;
+        }
+    }
+}
 
 int main()
 {
