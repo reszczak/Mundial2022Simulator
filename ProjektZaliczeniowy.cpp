@@ -1,262 +1,21 @@
 ﻿
 
 #include <iostream>
+#include <windows.h>
 #include <stdio.h>      
 #include <stdlib.h>     
 #include <time.h> 
 #include <conio.h>
 
 using namespace std;
-void spowolnienie()
-{
-    srand(time(NULL));
-    int tab[6000];
-    for (int i = 0; i < 6000; i++)
-    {
-        tab[i] = rand() % 1500;
-    }
-    for (int i = 0; i < 6000; i++)
-    {
-        for (int j = 0; j < 6000 - 1; j++)
-        {
-            if (tab[j] > tab[j + 1])
-                swap(tab[j], tab[j + 1]);
-
-        }
-    }
-}
-
-class grupa
-{
-public:
-    string dr1, dr2, dr3, dr4;
-    int* pkt1, * pkt2, * pkt3, * pkt4;
-    int* bil1, * bil2, * bil3, * bil4;
-    string group;
-    void druzyna1()
-    {
-        cout << dr1 << " " << pkt1 << " " << bil1 << endl;
-    }
-    void druzyna2()
-    {
-        cout << dr2 << " " << pkt2 << " " << bil2 << endl;
-    }
-    void druzyna3()
-    {
-        cout << dr3 << " " << pkt3 << " " << bil3 << endl;
-    }
-    void druzyna4()
-    {
-        cout << dr4 << " " << pkt4 << " " << bil4 << endl;
-    }
-};
-/*
-//    void tabela()
-//    {
-//        if (dr1>dr2>dr3>dr4)
-//        {
-//            druzyna1();
-//            druzyna2();
-//            druzyna3();
-//            druzyna4();
-//
-//        }
-//        if (dr1 > dr2 > dr4 > dr3)
-//        {
-//            druzyna1();
-//            druzyna2();
-//            druzyna4();
-//            druzyna3();
-//
-//        }
-//        if (dr1 > dr3 > dr2 > dr4)
-//        {
-//            druzyna1();
-//            druzyna3();
-//            druzyna2();
-//            druzyna4();
-//
-//        }
-//        if (dr1 > dr3 > dr4 > dr2)
-//        {
-//            druzyna1();
-//            druzyna3();
-//            druzyna4();
-//            druzyna2();
-//
-//        }
-//        if (dr1 > dr4 > dr3 > dr2)
-//        {
-//            druzyna1();
-//            druzyna4();
-//            druzyna3();
-//            druzyna2();
-//
-//        }
-//        if (dr1 > dr4 > dr2 > dr3)
-//        {
-//            druzyna1();
-//            druzyna4();
-//            druzyna2();
-//            druzyna3();
-//
-//        }
-//        if (dr2 > dr1 > dr3 > dr4)
-//        {
-//            druzyna2();
-//            druzyna1();
-//            druzyna3();
-//            druzyna4();
-//
-//        }
-//        if (dr2 > dr1 > dr4 > dr3)
-//        {
-//            druzyna2();
-//            druzyna1();
-//            druzyna4();
-//            druzyna3();
-//
-//        }
-//        if (dr2 > dr3 > dr1 > dr4)
-//        {
-//            druzyna2();
-//            druzyna3();
-//            druzyna1();
-//            druzyna4();
-//
-//        }
-//        if (dr2 > dr3 > dr4 > dr1)
-//        {
-//            druzyna2();
-//            druzyna3();
-//            druzyna4();
-//            druzyna1();
-//
-//        }
-//        if (dr2 > dr4 > dr3 > dr1)
-//        {
-//            druzyna2();
-//            druzyna4();
-//            druzyna3();
-//            druzyna1();
-//
-//        }
-//        if (dr2 > dr4 > dr1 > dr3)
-//        {
-//            druzyna2();
-//            druzyna4();
-//            druzyna1();
-//            druzyna3();
-//
-//        }
-//        if (dr3 > dr1 > dr2 > dr4)
-//        {
-//            druzyna3();
-//            druzyna1();
-//            druzyna2();
-//            druzyna4();
-//
-//        }
-//        if (dr3 > dr1 > dr4 > dr2)
-//        {
-//            druzyna3();
-//            druzyna1();
-//            druzyna4();
-//            druzyna2();
-//
-//        }
-//        if (dr3 > dr2 > dr1 > dr4)
-//        {
-//            druzyna3();
-//            druzyna2();
-//            druzyna1();
-//            druzyna4();
-//
-//        }
-//        if (dr3 > dr2 > dr4 > dr1)
-//        {
-//            druzyna3();
-//            druzyna2();
-//            druzyna4();
-//            druzyna1();
-//
-//        }
-//        if (dr3 > dr4 > dr2 > dr1)
-//        {
-//            druzyna3();
-//            druzyna4();
-//            druzyna2();
-//            druzyna1();
-//
-//        }
-//        if (dr3 > dr4 > dr1 > dr2)
-//        {
-//            druzyna3();
-//            druzyna4();
-//            druzyna1();
-//            druzyna2();
-//
-//        }
-//        if (dr4 > dr1 > dr2 > dr3)
-//        {
-//            druzyna4();
-//            druzyna1();
-//            druzyna2();
-//            druzyna3();
-//
-//        }
-//        if (dr4 > dr1 > dr3 > dr2)
-//        {
-//            druzyna4();
-//            druzyna1();
-//            druzyna3();
-//            druzyna2();
-//
-//        }
-//        if (dr4 > dr2 > dr1 > dr3)
-//        {
-//            druzyna4();
-//            druzyna2();
-//            druzyna1();
-//            druzyna3();
-//
-//        }
-//        if (dr4 > dr2 > dr3 > dr1)
-//        {
-//            druzyna4();
-//            druzyna2();
-//            druzyna3();
-//            druzyna1();
-//
-//        }
-//        if (dr4 > dr3 > dr2 > dr1)
-//        {
-//            druzyna4();
-//            druzyna3();
-//            druzyna2();
-//            druzyna1();
-//
-//        }
-//        if (dr4 > dr3 > dr1 > dr2)
-//        {
-//            druzyna4();
-//            druzyna3();
-//            druzyna1();
-//            druzyna2();
-//
-//        }
-//
-//    }
-//
-//
-//};*/
 
 double bramki()
 {
     
     int bramki;
     srand(time(NULL));
-    bramki = rand() % 6 + 1;
+    Sleep(1000);
+    bramki = rand() % 6;
     return bramki;
 }
 double szansa1(double waga1, double waga2)
@@ -281,8 +40,8 @@ void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, 
 
     for (int i = 0; i < size; i++)
     {
+        Sleep(100);
         srand(time(NULL));
-        spowolnienie();
         gol[i] = rand() % 101;
         if (gol[i] < szansa1(waga1, waga2))
         {
@@ -306,6 +65,11 @@ void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, 
         *dr2 = *dr2 + 3;
     }
     else if (gol1 = gol2)
+    {
+        *dr1 = *dr1 + 1;
+        *dr2 = *dr2 + 1;
+    }
+    else if (gol1 == 0 && gol2 == 0)
     {
         *dr1 = *dr1 + 1;
         *dr2 = *dr2 + 1;
