@@ -196,7 +196,7 @@ void karne(int* dr1, int* dr2, string druzyna1, string druzyna2)
     }
 
     cout << " Wynik: " << druzyna1 << "  " << dr1 << " (" << gol1 << ")  -  " << dr2 << " (" << gol2 << ")  " << druzyna2 << endl;
-
+}
 int main()
 {
     int pkt1 = 0;
