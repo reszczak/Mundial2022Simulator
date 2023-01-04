@@ -51,6 +51,13 @@ public:
 
         }
     }
+    void wypisz2()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            cout << teams[i].nazwa<<endl;
+        }
+    }
 
 }; 
 class turniej
@@ -341,16 +348,16 @@ int main()
             druz[i].nazwa = team[i];
             druz[i].JakaGrupa = group[i];
         }
-        for (int i = 0; i < MAX_SIZE; i++)
+      /*  for (int i = 0; i < MAX_SIZE; i++)
         {
             druz[i].wypisz();
         }
-        
+        */
         
         
         const int IloscGrup = 8;
         grupa grupy[IloscGrup];
-        for (int i = 0; i < MAX_SIZE; i++)
+       /* for (int i = 0; i < MAX_SIZE; i++)
         {
             for (int j = 0; j < MAX_SIZE; j+4)
             {
@@ -366,8 +373,36 @@ int main()
                     }
                 }
             }
+        }*/
+        int i = 0;
+        int j = 0;
+        for (int k = 0; k < MAX_SIZE; k++)
+        {
+
+
+            if (j == 8)
+            {
+                j = 0;
+
+                grupy[i].teams[j] = druz[k];
+            }
+            if (i == 4)
+            {
+                i = 0;
+
+                grupy[i].teams[j] = druz[k];
+            }
+            else
+            {
+                grupy[i].teams[j] = druz[k];
+            }
+            i++;
+            j++;
         }
-        
+       
+
+
+        grupy[0].wypisz2() ;
         
         
         
