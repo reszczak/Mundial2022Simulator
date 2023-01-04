@@ -11,11 +11,15 @@ using namespace std;
 class druzyna
 {
 public:
-    int* ocena;
-    int* punkty;
-    int* bilans;
-    string* nazwa;
-    string* JakaGrupa;
+    int ocena;
+    int punkty;
+    int bilans;
+    string nazwa;
+    string JakaGrupa;
+    void wypisz() 
+    {
+        cout << "BIlANS: " << bilans;
+    }
 
 };
 
@@ -23,9 +27,28 @@ public:
 class grupa
 {
 public:
-    
+    druzyna x;
+    druzyna y;
+    druzyna z;
+    druzyna w;
 
+    druzyna teams[4];
 
+    void sortuj()
+    {
+        for (size_t i = 0; i < 4; i++)
+        {
+            for (size_t j = 0; j < 4-1; j++)
+            {
+                if (teams[j].bilans > teams[j+1].bilans)
+                {
+                    teams[j]
+
+                }
+            }
+
+        }
+    }
 
 }; 
 class turniej
@@ -470,6 +493,11 @@ int main()
 
 
 
+
+        grupa A[8];
+        A[0].w.bilans = 4;
+        //metoda klas
+        A[1].w.wypisz();
 
 
 
