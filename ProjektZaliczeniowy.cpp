@@ -19,9 +19,11 @@ public:
     int bilans;
     string nazwa;
     string JakaGrupa;
+    
+
     void wypisz() 
     {
-        cout << setw(0) << setfill(' ') << nazwa << setw(23) << setfill(' ') << JakaGrupa << setw(30) << setfill(' ') << ocena << endl;
+        cout << setw(0) << setfill(' ') << nazwa << setw(20-nazwa.size()) << setfill(' ') << JakaGrupa << setw(10) << setfill(' ') << ocena << endl;
     }
 
 };
@@ -30,10 +32,7 @@ public:
 class grupa
 {
 public:
-    druzyna x;
-    druzyna y;
-    druzyna z;
-    druzyna w;
+    
 
     druzyna teams[4];
 
@@ -349,8 +348,16 @@ int main()
         
         
         
+        const int IloscGrup = 8;
+        grupa grupy[IloscGrup];
+        for (int i = 0; i < IloscGrup; i++)
+        {
+
+        }
         
-        //grupa A[8];
+        
+        
+        
         //A[0].w.bilans = 4;
         //metoda klas
         //A[1].w.wypisz();
