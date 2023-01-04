@@ -6,19 +6,22 @@
 #include <stdlib.h>     
 #include <time.h> 
 #include <conio.h>
+#include <fstream>
+#include <string>
 
 using namespace std;
+const int MAX_SIZE = 100;
 class druzyna
 {
 public:
-    int ocena;
+    double ocena;
     int punkty;
     int bilans;
     string nazwa;
     string JakaGrupa;
     void wypisz() 
     {
-        cout << "BIlANS: " << bilans;
+        cout << nazwa << "       " <<JakaGrupa << "       " << ocena;
     }
 
 };
@@ -42,7 +45,7 @@ public:
             {
                 if (teams[j].bilans > teams[j+1].bilans)
                 {
-                    teams[j]
+                    
 
                 }
             }
@@ -58,7 +61,42 @@ public:
 
 };
 
-
+int read_data(string filename, double* grades) {
+    int size = 0;
+    ifstream file(filename);
+    if (file.is_open()) {
+        int value;
+        while (file >> value) {
+            if (size < MAX_SIZE) {
+                grades[size] = value;
+            }
+            size++;
+        }
+        file.close();
+    }
+    else {
+        cout << "Nie uda�o si� otworzy� pliku." << endl;
+    }
+    return size;
+}
+int read_data2(string filename, string* groups) {
+    int size = 0;
+    ifstream file(filename);
+    if (file.is_open()) {
+        string value;
+        while (getline(file, value)) {
+            if (size < MAX_SIZE) {
+                groups[size] = value;
+            }
+            size++;
+        }
+        file.close();
+    }
+    else {
+        cout << "Nie uda�o si� otworzy� pliku." << endl;
+    }
+    return size;
+}
 double bramki()
 {
 
@@ -283,12 +321,19 @@ void puchary(int* dr1, int* dr2, double waga1, double waga2, int* wynik1, int* w
 
 int main()
 {
-    const int size = 32;
-    int* points = new int[size];
-    int* balance = new int[size];
-    double* grade = new double[size];
-    string* group = new string[size];
-    string* team = new string[size];
+    double* grade = new double[MAX_SIZE];
+    string* group = new string[MAX_SIZE];
+    string* team = new string[MAX_SIZE];
+
+    int size = read_data("chances.csv", grade);
+    int size2 = read_data2("groups.csv", group);
+    int size3 = read_data2("teams.csv", team);
+    const int rozmiar = 32;
+    int* points = new int[rozmiar];
+    int* balance = new int[rozmiar];
+    
+    
+    
    
     //Grupa A
     druzyna holandia;
@@ -494,11 +539,12 @@ int main()
 
 
 
-        grupa A[8];
-        A[0].w.bilans = 4;
+        //grupa A[8];
+        //A[0].w.bilans = 4;
         //metoda klas
-        A[1].w.wypisz();
-
+        //A[1].w.wypisz();
+        
+        francja.wypisz();
 
 
 
