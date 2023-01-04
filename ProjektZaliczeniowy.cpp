@@ -75,7 +75,7 @@ int read_data(string filename, double* grades) {
         file.close();
     }
     else {
-        cout << "Nie uda�o si� otworzy� pliku." << endl;
+        cout << "Nie udalo sie otworzyc pliku." << endl;
     }
     return size;
 }
@@ -93,7 +93,7 @@ int read_data2(string filename, string* groups) {
         file.close();
     }
     else {
-        cout << "Nie uda�o si� otworzy� pliku." << endl;
+        cout << "Nie udalo sie otworzyc pliku." << endl;
     }
     return size;
 }
@@ -325,9 +325,9 @@ int main()
     string* group = new string[MAX_SIZE];
     string* team = new string[MAX_SIZE];
 
-    int size = read_data("chances.csv", grade);
-    int size2 = read_data2("groups.csv", group);
-    int size3 = read_data2("teams.csv", team);
+    int size = read_data("chances.txt", grade);
+    int size2 = read_data2("groups.txt", group);
+    int size3 = read_data2("teams.txt", team);
     const int rozmiar = 32;
     int* points = new int[rozmiar];
     int* balance = new int[rozmiar];
