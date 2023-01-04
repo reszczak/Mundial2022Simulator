@@ -10,7 +10,7 @@
 #include <string>
 
 using namespace std;
-const int MAX_SIZE = 100;
+const int MAX_SIZE = 32;
 class druzyna
 {
 public:
@@ -328,9 +328,9 @@ int main()
     int size = read_data("chances.txt", grade);
     int size2 = read_data2("groups.txt", group);
     int size3 = read_data2("teams.txt", team);
-    const int rozmiar = 32;
-    int* points = new int[rozmiar];
-    int* balance = new int[rozmiar];
+    
+    int* points = new int[MAX_SIZE];
+    int* balance = new int[MAX_SIZE];
     
     
     
