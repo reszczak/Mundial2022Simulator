@@ -350,9 +350,22 @@ int main()
         
         const int IloscGrup = 8;
         grupa grupy[IloscGrup];
-        for (int i = 0; i < IloscGrup; i++)
+        for (int i = 0; i < MAX_SIZE; i++)
         {
-
+            for (int j = 0; j < MAX_SIZE; j+4)
+            {
+                for (int k = 0; k < MAX_SIZE; k+8)
+                {
+                    if (i==0,j==0,k==0)
+                    {
+                        grupy[j].teams[k] = druz[i];
+                    }
+                    else
+                    {
+                        grupy[j - 3].teams[k - 7] = druz[i];
+                    }
+                }
+            }
         }
         
         
