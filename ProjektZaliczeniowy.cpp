@@ -37,28 +37,35 @@ public:
 
     druzyna teams[4];
 
-    void sortuj(int i)
+    void sortuj()
     {
-        int size = i + 4;
-        for (i; i < size; i++)
+        
+        for (int i=0; i < 4; i++)
         {
-            for (size_t j = 0; j < size - 1; j++)
+            for (size_t j = 0; j < 4 - 1; j++)
             {
-                if (teams[j].bilans > teams[j + 1].bilans)
+                if (teams[j].punkty > teams[j + 1].punkty)
                 {
                     swap(teams[j], teams[j + 1]);
 
+                }
+                if (teams[j].punkty = teams[j+1].punkty)
+                {
+                    if (teams[j].bilans > teams[j + 1].bilans)
+                    {
+                        swap(teams[j], teams[j + 1]);
+                    }
                 }
             }
 
         }
     }
-    void wypisz2(int i)
+    void wypisz2()
     {
-        int size = i + 4;
-        for (i; i < size; i++)
+        
+        for (int i=0; i < 4; i++)
         {
-            cout << teams[i].nazwa << setw(20 - teams[i].nazwa.size()) << setfill(' ') << teams[i].punkty << setw(20 - teams[i].nazwa.size()) << setfill(' ') << teams[i].bilans << endl;
+            cout << teams[i].nazwa << setw(20 - teams[i].nazwa.size()) << setfill(' ') << teams[i].punkty << setw(10) << setfill(' ') << teams[i].bilans << endl;
 
         }
 
@@ -381,10 +388,10 @@ int main()
         druz[i].nazwa = team[i];
         druz[i].JakaGrupa = group[i];
     }
-    for (int i = 0; i < MAX_SIZE; i++)
+    /*for (int i = 0; i < MAX_SIZE; i++)
     {
         druz[i].wypisz();
-    }
+    }*/
 
 
 
@@ -392,19 +399,22 @@ int main()
     grupa grupy[IloscGrup];
 
 
-    /*for (int i = 0; i < MAX_SIZE; i++)
+    for (int i = 0; i < MAX_SIZE; i++)
     {
-        if (i==0||i%4==0)
-        {
-            grupy[i / 4].sortuj(i);
-            grupy[i / 4].wypisz2(i);
-        }
-        else
-        {
+        grupy[i / 4].teams[i % 4] = druz[i];
+    }
 
-        }
+    for (int i = 0; i < MAX_SIZE; i++)
+    {
+        grupy[i / 4].sortuj();
+        grupy[i / 4].wypisz2();
+    }
 
-    }*/
+
+
+
+
+   
 
 
 
@@ -486,9 +496,9 @@ int main()
          i++;
          j++;
      }*/
-    int i = 0;
+    /*int i = 0;
     int j = 0;
-    int k = 0;
+    int k = 0;*/
     /*do
     {
         if (j == 8)
