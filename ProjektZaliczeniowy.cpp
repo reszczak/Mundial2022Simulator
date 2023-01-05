@@ -23,7 +23,7 @@ public:
 
     void wypisz()
     {
-        cout << setw(0) << setfill(' ') << nazwa << setw(20 - nazwa.size()) << setfill(' ') << JakaGrupa << setw(10) << setfill(' ') << ocena << endl;
+        cout << setw(0) << setfill(' ') << nazwa << setw(20 - nazwa.size()) << setfill(' ') << punkty << setw(10) << setfill(' ') << bilans << endl;
 
     }
 
@@ -139,16 +139,16 @@ double szansa2(double waga1, double waga2)
     return szansa2;
 }
 
-void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, string *druzyna1, string *druzyna2)
+void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, string* druzyna1, string* druzyna2)
 {
     int gol1 = 0;
     int gol2 = 0;
     int gol[6];
-    const int size = bramki();
+    int size = bramki();
 
     for (int i = 0; i < size; i++)
     {
-        Sleep(100);
+        Sleep(500);
         srand(time(NULL));
         gol[i] = rand() % 101;
         if (gol[i] < szansa1(waga1, waga2))
@@ -182,7 +182,9 @@ void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, 
         *dr1 = *dr1 + 1;
         *dr2 = *dr2 + 1;
     }
-    cout << "Wynik meczu: " << druzyna1 << " - " << druzyna2 << "     " << gol1 << " - " << gol2 << endl;
+    string dlugosc1 = *druzyna1;
+    string dlugosc2 = *druzyna2;
+    cout << "Wynik meczu: " << endl << *druzyna1 << setw(12 - dlugosc1.size()) << setfill(' ') << gol1 << "   -   " << gol2 << setw(12) << setfill(' ') << *druzyna2 << endl;
 }
 int randomKarne()
 {
@@ -296,7 +298,7 @@ void puchary(int* dr1, int* dr2, double waga1, double waga2, int* wynik1, int* w
         Sleep(100);
         srand(time(NULL));
         gol[i] = rand() % 101;
-        if (gol[i] < szansa1(waga1,waga2))
+        if (gol[i] < szansa1(waga1, waga2))
         {
 
             *dr1 = *dr1 + 1;
@@ -342,15 +344,22 @@ int main()
 
     int* points = new int[MAX_SIZE];
     int* balance = new int[MAX_SIZE];
-//Faza GRUPOWA
-    for (int i = 0; i < MAX_SIZE; i+4)
+    //Definicja Points i Balance
+    for (int i = 0; i < MAX_SIZE; i++)
     {
-        mecz(&points[i], &points[i + 1], &balance[i], &balance[i + 1], grade[i], grade[i + 1], &team[i], &team[i+1]);
-        mecz(&points[i+2], &points[i + 3], &balance[i+2], &balance[i + 3], grade[i+2], grade[i + 3], &team[i+2], &team[i+3]);
-        mecz(&points[i], &points[i + 2], &balance[i], &balance[i + 2], grade[i], grade[i + 2], &team[i], &team[i+2]);
-        mecz(&points[i+1], &points[i + 3], &balance[i+1], &balance[i + 3], grade[i+1], grade[i + 3], &team[i+1], &team[i+3]);
-        mecz(&points[i], &points[i + 3], &balance[i], &balance[i + 3], grade[i], grade[i + 3], &team[i], &team[i+3]);
-        mecz(&points[i+1], &points[i + 2], &balance[i+1], &balance[i + 2], grade[i+1], grade[i + 2], &team[i+1], &team[i+2]);
+        points[i] = 0;
+        balance[i] = 0;
+    }
+    //Faza GRUPOWA
+    for (int i = 0; i < MAX_SIZE; i + 4)
+    {
+        mecz(&points[i], &points[i + 1], &balance[i], &balance[i + 1], grade[i], grade[i + 1], &team[i], &team[i + 1]);
+        mecz(&points[i + 2], &points[i + 3], &balance[i + 2], &balance[i + 3], grade[i + 2], grade[i + 3], &team[i + 2], &team[i + 3]);
+        mecz(&points[i], &points[i + 2], &balance[i], &balance[i + 2], grade[i], grade[i + 2], &team[i], &team[i + 2]);
+        mecz(&points[i + 1], &points[i + 3], &balance[i + 1], &balance[i + 3], grade[i + 1], grade[i + 3], &team[i + 1], &team[i + 3]);
+        mecz(&points[i], &points[i + 3], &balance[i], &balance[i + 3], grade[i], grade[i + 3], &team[i], &team[i + 3]);
+        mecz(&points[i + 1], &points[i + 2], &balance[i + 1], &balance[i + 2], grade[i + 1], grade[i + 2], &team[i + 1], &team[i + 2]);
+        cout << endl;
     }
 
 
@@ -377,8 +386,8 @@ int main()
 
 
 
-    
-    
+
+
 
 
 
