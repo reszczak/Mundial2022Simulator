@@ -39,8 +39,8 @@ public:
 
     void sortuj()
     {
-        
-        for (int i=0; i < 4; i++)
+
+        for (int i = 0; i < 4; i++)
         {
             for (size_t j = 0; j < 4 - 1; j++)
             {
@@ -49,7 +49,7 @@ public:
                     swap(teams[j], teams[j + 1]);
 
                 }
-                if (teams[j].punkty = teams[j+1].punkty)
+                if (teams[j].punkty = teams[j + 1].punkty)
                 {
                     if (teams[j].bilans > teams[j + 1].bilans)
                     {
@@ -62,8 +62,8 @@ public:
     }
     void wypisz2()
     {
-        
-        for (int i=0; i < 4; i++)
+
+        for (int i = 0; i < 4; i++)
         {
             cout << teams[i].nazwa << setw(20 - teams[i].nazwa.size()) << setfill(' ') << teams[i].punkty << setw(10) << setfill(' ') << teams[i].bilans << endl;
 
@@ -120,7 +120,7 @@ int bramki()
 
     int bramki;
     srand(time(NULL));
-    Sleep(1500);
+    Sleep(400);
     bramki = rand() % 6;
     return bramki;
 }
@@ -133,18 +133,13 @@ double bramkiPuchar()
     bramki = rand() % 2;
     return bramki;
 }
-double szansa1(double waga1, double waga2)
+double szansa(double waga1, double waga2)
 {
     double szansa1;
     szansa1 = (waga1 / (waga1 + waga2)) * 100;
     return szansa1;
 }
-double szansa2(double waga1, double waga2)
-{
-    double szansa2;
-    szansa2 = (waga2 / (waga1 + waga2)) * 100;
-    return szansa2;
-}
+
 
 void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, string* druzyna1, string* druzyna2)
 {
@@ -155,10 +150,10 @@ void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, 
 
     for (int i = 0; i < size; i++)
     {
-        Sleep(500);
+        Sleep(300);
         srand(time(NULL));
         gol[i] = rand() % 101;
-        if (gol[i] < szansa1(waga1, waga2))
+        if (gol[i] < szansa(waga1, waga2))
         {
             gol1 = gol1 + 1;
             *bil1 = *bil1 + 1;
@@ -191,7 +186,7 @@ void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, 
     }
     string dlugosc1 = *druzyna1;
     string dlugosc2 = *druzyna2;
-    cout << "Wynik meczu: " << endl << *druzyna1 << setw(12 - dlugosc1.size()) << setfill(' ') << gol1 << "   -   " << gol2 << setw(12) << setfill(' ') << *druzyna2 << endl;
+    cout << *druzyna1 << setw(12 - dlugosc1.size()) << setfill(' ') << gol1 << "   -   " << gol2 << setw(12) << setfill(' ') << *druzyna2 << endl;
 }
 int randomKarne()
 {
@@ -268,7 +263,7 @@ void dogrywka(int* dr1, int* dr2, double waga1, double waga2, int* wynik1, int* 
         Sleep(100);
         srand(time(NULL));
         gol[i] = rand() % 101;
-        if (gol[i] < szansa1(waga1, waga2))
+        if (gol[i] < szansa(waga1, waga2))
         {
 
             *dr1 = *dr1 + 1;
@@ -305,7 +300,7 @@ void puchary(int* dr1, int* dr2, double waga1, double waga2, int* wynik1, int* w
         Sleep(100);
         srand(time(NULL));
         gol[i] = rand() % 101;
-        if (gol[i] < szansa1(waga1, waga2))
+        if (gol[i] < szansa(waga1, waga2))
         {
 
             *dr1 = *dr1 + 1;
@@ -357,27 +352,6 @@ int main()
         points[i] = 0;
         balance[i] = 0;
     }
-    //Faza GRUPOWA
-    for (int i = 0; i < MAX_SIZE; i++)
-    {
-        if (i == 0 || i % 4 == 0)
-        {
-            mecz(&points[i], &points[i + 1], &balance[i], &balance[i + 1], grade[i], grade[i + 1], &team[i], &team[i + 1]);
-            mecz(&points[i + 2], &points[i + 3], &balance[i + 2], &balance[i + 3], grade[i + 2], grade[i + 3], &team[i + 2], &team[i + 3]);
-            mecz(&points[i], &points[i + 2], &balance[i], &balance[i + 2], grade[i], grade[i + 2], &team[i], &team[i + 2]);
-            mecz(&points[i + 1], &points[i + 3], &balance[i + 1], &balance[i + 3], grade[i + 1], grade[i + 3], &team[i + 1], &team[i + 3]);
-            mecz(&points[i], &points[i + 3], &balance[i], &balance[i + 3], grade[i], grade[i + 3], &team[i], &team[i + 3]);
-            mecz(&points[i + 1], &points[i + 2], &balance[i + 1], &balance[i + 2], grade[i + 1], grade[i + 2], &team[i + 1], &team[i + 2]);
-            cout << endl;
-        }
-        else
-        {
-
-        }
-    }
-
-
-
     druzyna druz[32];
     for (int i = 0; i < MAX_SIZE; i++)
     {
@@ -388,6 +362,36 @@ int main()
         druz[i].nazwa = team[i];
         druz[i].JakaGrupa = group[i];
     }
+    //Faza GRUPOWA
+    
+
+
+    
+    
+    for (int i = 0; i < MAX_SIZE; i++)
+    {
+        if (i == 0 || i % 4 == 0)
+        {
+            cout << "GRUPA " << group[i] << endl << endl;
+            cout << "Kolejka 1: " << endl << endl;
+            mecz(&points[i], &points[i + 1], &balance[i], &balance[i + 1], grade[i], grade[i + 1], &team[i], &team[i + 1]);
+            mecz(&points[i + 2], &points[i + 3], &balance[i + 2], &balance[i + 3], grade[i + 2], grade[i + 3], &team[i + 2], &team[i + 3]);
+            cout << endl << "Kolejka 2: " << endl << endl;
+            mecz(&points[i], &points[i + 2], &balance[i], &balance[i + 2], grade[i], grade[i + 2], &team[i], &team[i + 2]);
+            mecz(&points[i + 1], &points[i + 3], &balance[i + 1], &balance[i + 3], grade[i + 1], grade[i + 3], &team[i + 1], &team[i + 3]);
+            cout << endl << "Kolekja 3: " << endl << endl;
+            mecz(&points[i], &points[i + 3], &balance[i], &balance[i + 3], grade[i], grade[i + 3], &team[i], &team[i + 3]);
+            mecz(&points[i + 1], &points[i + 2], &balance[i + 1], &balance[i + 2], grade[i + 1], grade[i + 2], &team[i + 1], &team[i + 2]);
+            cout << endl;
+        }
+    }
+    for (int i = 0; i < MAX_SIZE; i++)
+    {
+        druz[i].wypisz();
+    }
+
+
+
     /*for (int i = 0; i < MAX_SIZE; i++)
     {
         druz[i].wypisz();
@@ -399,181 +403,19 @@ int main()
     grupa grupy[IloscGrup];
 
 
-    for (int i = 0; i < MAX_SIZE; i++)
-    {
-        grupy[i / 4].teams[i % 4] = druz[i];
-    }
-
-    for (int i = 0; i < MAX_SIZE; i++)
-    {
-        grupy[i / 4].sortuj();
-        grupy[i / 4].wypisz2();
-    }
-
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /* for (int i = 0; i < MAX_SIZE; i++)
      {
-         for (int j = 0; j < MAX_SIZE; j+4)
-         {
-             for (int k = 0; k < MAX_SIZE; k+8)
-             {
-                 if (i==0,j==0,k==0)
-                 {
-                     grupy[j].teams[k] = druz[i];
-                 }
-                 else
-                 {
-                     grupy[j - 3].teams[k - 7] = druz[i];
-                 }
-             }
-         }
-     }*/
-     /*int i = 0;
-     int j = 0;
-     for (int k = 0; k < MAX_SIZE; k++)
-     {
-
-
-         if (j == 8)
-         {
-             j = 0;
-
-             grupy[i].teams[j] = druz[k];
-         }
-         if (i == 4)
-         {
-             i = 0;
-
-             grupy[i].teams[j] = druz[k];
-         }
-         else
-         {
-             grupy[i].teams[j] = druz[k];
-         }
-         i++;
-         j++;
-     }*/
-    /*int i = 0;
-    int j = 0;
-    int k = 0;*/
-    /*do
-    {
-        if (j == 8)
-        {
-            j = 0;
-            grupy[j].teams[k] = druz[i];
-        }
-        if (k == 4)
-        {
-            k = 0;
-            grupy[j].teams[k] = druz[i];
-        }
-        else
-        {
-            grupy[j].teams[k] = druz[i];
-        }
-        i++; j++; k++;
-
-    } while (i < MAX_SIZE);*/
-
-
-    /*TO JEST RACZEJ DOBRE
-    int j = 0;
-    for (int i = 0; i < MAX_SIZE; i+4)
-    {
-        if (j==4)
-        {
-            j = 0;
-            grupy[j].sortuj(i);
-            grupy[j].wypisz2(i);
-
-        }
-        else
-        {
-            grupy[j].sortuj(i);
-            grupy[j].wypisz2(i);
-
-        }
-        j++;
-
-    }*/
-
-
-    /* for (int i = 0; i < 8; i++)
-     {
-         grupy[i].wypisz2();
+         grupy[i / 4].teams[i] = druz[i];
      }*/
 
+     /* for (int i = 0; i < MAX_SIZE; i++)
+      {
+          grupy[i / 4].sortuj();
+          grupy[i / 4].wypisz2();
+      }*/
 
 
 
-
-
-
-     //int pkt1 = 0;
-     //int pkt2 = 0;
-     //int bilans1 = 0;
-     //int bilans2 = 0;
-     //int wag1 = 5;
-     //int wag2 = 5;
-     //int bilans3 = -1;
-     //int pkt3 = 0;
-     //int wynik1 = 0;
-     //int wynik2 = 0;
-     //string druzyna3 = "Arabia";
-     //int wag3 = 2;
-     //string druzyna1 = "Polska";
-     //string druzyna2 = "Francja";
-     //cout << "Mecz 1:" << endl;
-     //mecz(&pkt1, &pkt2, &bilans1, &bilans2, wag1, wag2, druzyna1, druzyna2); cout << "Punkty1: " << pkt1 << "  Bilans1: " << bilans1 << endl; cout << "Punkty2: " << pkt2 << "  Bilans2: " << bilans2 << endl << endl;
-     //cout << endl << endl << endl;
-     //mecz(&pkt1, &pkt3, &bilans1, &bilans3, wag1, wag3, druzyna1, druzyna3); cout << "Punkty1: " << pkt1 << "  Bilans1: " << bilans1 << endl; cout << "Punkty3: " << pkt3 << "  Bilans3: " << bilans3 << endl << endl;
-     //
-     //cout << endl << endl << endl << endl;
-     //puchary(&pkt1, &pkt2, wag1, wag2, &wynik1, &wynik2, druzyna1, druzyna2);
     return 0;
 }
 
