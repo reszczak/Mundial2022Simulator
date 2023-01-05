@@ -40,7 +40,7 @@ public:
     void sortuj(int i)
     {
         int size = i + 4;
-        for (size_t i = 0; i < size; i++)
+        for (i; i < size; i++)
         {
             for (size_t j = 0; j < size - 1; j++)
             {
@@ -56,7 +56,7 @@ public:
     void wypisz2(int i)
     {
         int size = i + 4;
-        for (i = 0; i < size; i++)
+        for (i; i < size; i++)
         {
             cout << teams[i].nazwa << setw(20 - teams[i].nazwa.size()) << setfill(' ') << teams[i].punkty << setw(20 - teams[i].nazwa.size()) << setfill(' ') << teams[i].bilans << endl;
 
@@ -351,16 +351,24 @@ int main()
         balance[i] = 0;
     }
     //Faza GRUPOWA
-    for (int i = 0; i < MAX_SIZE; i + 4)
+    for (int i = 0; i < MAX_SIZE; i++)
     {
-        mecz(&points[i], &points[i + 1], &balance[i], &balance[i + 1], grade[i], grade[i + 1], &team[i], &team[i + 1]);
-        mecz(&points[i + 2], &points[i + 3], &balance[i + 2], &balance[i + 3], grade[i + 2], grade[i + 3], &team[i + 2], &team[i + 3]);
-        mecz(&points[i], &points[i + 2], &balance[i], &balance[i + 2], grade[i], grade[i + 2], &team[i], &team[i + 2]);
-        mecz(&points[i + 1], &points[i + 3], &balance[i + 1], &balance[i + 3], grade[i + 1], grade[i + 3], &team[i + 1], &team[i + 3]);
-        mecz(&points[i], &points[i + 3], &balance[i], &balance[i + 3], grade[i], grade[i + 3], &team[i], &team[i + 3]);
-        mecz(&points[i + 1], &points[i + 2], &balance[i + 1], &balance[i + 2], grade[i + 1], grade[i + 2], &team[i + 1], &team[i + 2]);
-        cout << endl;
+        if (i == 0 || i % 4 == 0)
+        {
+            mecz(&points[i], &points[i + 1], &balance[i], &balance[i + 1], grade[i], grade[i + 1], &team[i], &team[i + 1]);
+            mecz(&points[i + 2], &points[i + 3], &balance[i + 2], &balance[i + 3], grade[i + 2], grade[i + 3], &team[i + 2], &team[i + 3]);
+            mecz(&points[i], &points[i + 2], &balance[i], &balance[i + 2], grade[i], grade[i + 2], &team[i], &team[i + 2]);
+            mecz(&points[i + 1], &points[i + 3], &balance[i + 1], &balance[i + 3], grade[i + 1], grade[i + 3], &team[i + 1], &team[i + 3]);
+            mecz(&points[i], &points[i + 3], &balance[i], &balance[i + 3], grade[i], grade[i + 3], &team[i], &team[i + 3]);
+            mecz(&points[i + 1], &points[i + 2], &balance[i + 1], &balance[i + 2], grade[i + 1], grade[i + 2], &team[i + 1], &team[i + 2]);
+            cout << endl;
+        }
+        else
+        {
+
+        }
     }
+
 
 
     druzyna druz[32];
@@ -384,6 +392,19 @@ int main()
     grupa grupy[IloscGrup];
 
 
+    /*for (int i = 0; i < MAX_SIZE; i++)
+    {
+        if (i==0||i%4==0)
+        {
+            grupy[i / 4].sortuj(i);
+            grupy[i / 4].wypisz2(i);
+        }
+        else
+        {
+
+        }
+
+    }*/
 
 
 
