@@ -352,16 +352,7 @@ int main()
         points[i] = 0;
         balance[i] = 0;
     }
-    druzyna druz[32];
-    for (int i = 0; i < MAX_SIZE; i++)
-    {
 
-        druz[i].ocena = grade[i];
-        druz[i].punkty = points[i];
-        druz[i].bilans = balance[i];
-        druz[i].nazwa = team[i];
-        druz[i].JakaGrupa = group[i];
-    }
     //Faza GRUPOWA
     
 
@@ -384,6 +375,16 @@ int main()
             mecz(&points[i + 1], &points[i + 2], &balance[i + 1], &balance[i + 2], grade[i + 1], grade[i + 2], &team[i + 1], &team[i + 2]);
             cout << endl;
         }
+    }
+    druzyna druz[32];
+    for (int i = 0; i < MAX_SIZE; i++)
+    {
+
+        druz[i].ocena = grade[i];
+        druz[i].punkty = points[i];
+        druz[i].bilans = balance[i];
+        druz[i].nazwa = team[i];
+        druz[i].JakaGrupa = group[i];
     }
     for (int i = 0; i < MAX_SIZE; i++)
     {
