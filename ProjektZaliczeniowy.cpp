@@ -120,7 +120,7 @@ int bramki()
 
     int bramki;
     srand(time(NULL));
-    Sleep(400);
+    Sleep(1500);
     bramki = rand() % 6;
     return bramki;
 }
@@ -352,16 +352,7 @@ int main()
         points[i] = 0;
         balance[i] = 0;
     }
-    druzyna druz[32];
-    for (int i = 0; i < MAX_SIZE; i++)
-    {
-
-        druz[i].ocena = grade[i];
-        druz[i].punkty = points[i];
-        druz[i].bilans = balance[i];
-        druz[i].nazwa = team[i];
-        druz[i].JakaGrupa = group[i];
-    }
+   
     //Faza GRUPOWA
     
 
@@ -379,40 +370,57 @@ int main()
             cout << endl << "Kolejka 2: " << endl << endl;
             mecz(&points[i], &points[i + 2], &balance[i], &balance[i + 2], grade[i], grade[i + 2], &team[i], &team[i + 2]);
             mecz(&points[i + 1], &points[i + 3], &balance[i + 1], &balance[i + 3], grade[i + 1], grade[i + 3], &team[i + 1], &team[i + 3]);
-            cout << endl << "Kolekja 3: " << endl << endl;
+            cout << endl << "Kolejka 3: " << endl << endl;
             mecz(&points[i], &points[i + 3], &balance[i], &balance[i + 3], grade[i], grade[i + 3], &team[i], &team[i + 3]);
             mecz(&points[i + 1], &points[i + 2], &balance[i + 1], &balance[i + 2], grade[i + 1], grade[i + 2], &team[i + 1], &team[i + 2]);
             cout << endl;
         }
     }
+    druzyna druz[32];
+    for (int i = 0; i < MAX_SIZE; i++)
+    {
+
+        druz[i].ocena = grade[i];
+        druz[i].punkty = points[i];
+        druz[i].bilans = balance[i];
+        druz[i].nazwa = team[i];
+        druz[i].JakaGrupa = group[i];
+    }
     for (int i = 0; i < MAX_SIZE; i++)
     {
         druz[i].wypisz();
     }
+    cout << endl << endl << endl << endl;
+
+
+//    const int IloscGrup = 8;
+//    grupa grupy[IloscGrup];
 
 
 
-    /*for (int i = 0; i < MAX_SIZE; i++)
-    {
-        druz[i].wypisz();
-    }*/
 
 
 
-    const int IloscGrup = 8;
-    grupa grupy[IloscGrup];
 
 
-    /* for (int i = 0; i < MAX_SIZE; i++)
+
+
+
+
+
+/*
+
+     for (int i = 0; i < MAX_SIZE; i++)
      {
-         grupy[i / 4].teams[i] = druz[i];
-     }*/
+         grupy[i / 4].teams[i% 4] = druz[i];
+     }
 
-     /* for (int i = 0; i < MAX_SIZE; i++)
+      for (int i = 0; i < MAX_SIZE; i++)
       {
           grupy[i / 4].sortuj();
           grupy[i / 4].wypisz2();
-      }*/
+      }
+*/
 
 
 
