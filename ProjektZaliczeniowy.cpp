@@ -572,11 +572,12 @@ int j =0;
       const int mecze16=8;
 
       Osemka osiem[mecze16];
-    for (int i = 0; i < druzyna16; ++i)
+    for (int i = 0; i < MAX_SIZE; ++i)
     {
-        osiem[i/2].grupa[]
+
 
     }
+    osiem[0].teams16[1]=grupy[1].teams[1];
 
 
     return 0;
