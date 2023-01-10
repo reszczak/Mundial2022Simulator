@@ -2,9 +2,9 @@
 
 #include <iostream>
 #include <windows.h>
-#include <stdio.h>      
-#include <stdlib.h>     
-#include <time.h> 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include <conio.h>
 #include <fstream>
 #include <string>
@@ -44,25 +44,27 @@ public:
         {
             for (size_t j = 0; j < 4 - 1; j++)
             {
-                if (teams[j].punkty > teams[j + 1].punkty)
+                if (teams[j].punkty < teams[j + 1].punkty)
                 {
                     swap(teams[j], teams[j + 1]);
 
                 }
-                if (teams[j].punkty = teams[j + 1].punkty)
+                if (teams[j].punkty == teams[j + 1].punkty)
                 {
-                    if (teams[j].bilans > teams[j + 1].bilans)
+                    if (teams[j].bilans < teams[j + 1].bilans)
                     {
                         swap(teams[j], teams[j + 1]);
                     }
                 }
+
             }
+           Sleep(1000);
 
         }
     }
     void wypisz2()
     {
-
+cout << "Grupa "<< teams[0].JakaGrupa<<endl;
         for (int i = 0; i < 4; i++)
         {
             cout << teams[i].nazwa << setw(20 - teams[i].nazwa.size()) << setfill(' ') << teams[i].punkty << setw(10) << setfill(' ') << teams[i].bilans << endl;
@@ -75,6 +77,7 @@ public:
 class turniej
 {
 public:
+
 
 
 };
@@ -120,7 +123,7 @@ int bramki()
 
     int bramki;
     srand(time(NULL));
-    Sleep(1500);
+    Sleep(2000);
     bramki = rand() % 6;
     return bramki;
 }
@@ -150,7 +153,7 @@ void mecz(int* dr1, int* dr2, int* bil1, int* bil2, double waga1, double waga2, 
 
     for (int i = 0; i < size; i++)
     {
-        Sleep(300);
+        Sleep(500);
         srand(time(NULL));
         gol[i] = rand() % 101;
         if (gol[i] < szansa(waga1, waga2))
@@ -352,13 +355,13 @@ int main()
         points[i] = 0;
         balance[i] = 0;
     }
-   
+
     //Faza GRUPOWA
-    
 
 
-    
-    
+
+
+
     for (int i = 0; i < MAX_SIZE; i++)
     {
         if (i == 0 || i % 4 == 0)
@@ -393,34 +396,25 @@ int main()
     cout << endl << endl << endl << endl;
 
 
-//    const int IloscGrup = 8;
-//    grupa grupy[IloscGrup];
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
+    const int IloscGrup = 8;
+    grupa grupy[IloscGrup];
+//WCZYTYWANIE DO GRUP
+int j =0;
      for (int i = 0; i < MAX_SIZE; i++)
      {
-         grupy[i / 4].teams[i% 4] = druz[i];
-     }
+         if (j==4)
+         {j=0;}
 
-      for (int i = 0; i < MAX_SIZE; i++)
+
+             grupy[i / 4].teams[j] = druz[i];
+
+j++;
+     }
+      for (int i = 0; i < IloscGrup; i++)
       {
-          grupy[i / 4].sortuj();
-          grupy[i / 4].wypisz2();
+          grupy[i].sortuj();
+          grupy[i].wypisz2();
       }
-*/
 
 
 
