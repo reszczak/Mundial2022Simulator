@@ -12,7 +12,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7bec306-8dff-4178-83c0-33c2b5480dc4" name="Changes" comment="Robimy dalej" />
+    <list default="true" id="61bbbe2f-68a5-4910-9078-0f531e914803" name="Changes" comment="test jetbrains">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjektZaliczeniowy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektZaliczeniowy.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,11 +27,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -53,22 +56,32 @@
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/Cym/OneDrive/Dokumenty/GitHub/ProjektZaliczeniowy/ProjektZaliczeniowy.cpp",
+    "last_opened_file_path": "C:/Users/reszc/source/repos/ProjektZaliczeniowy/ProjektZaliczeniowy.cpp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="C/C++ File.dawidowy komputer">
     <configuration name="ProjektZaliczeniowy.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ProjektZaliczeniowy" TARGET_NAME="ProjektZaliczeniowy.cpp" CONFIG_NAME="ProjektZaliczeniowy.cpp">
       <option name="sourceFile" value="C:\Users\Cym\OneDrive\Dokumenty\GitHub\ProjektZaliczeniowy\ProjektZaliczeniowy.cpp" />
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="dawidowy komputer" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ProjektZaliczeniowy" TARGET_NAME="ProjektZaliczeniowy.cpp" CONFIG_NAME="dawidowy komputer">
+      <option name="sourceFile" value="C:\Users\reszc\source\repos\ProjektZaliczeniowy\ProjektZaliczeniowy.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="C/C++ File.ProjektZaliczeniowy.cpp" />
+      <item itemvalue="C/C++ File.dawidowy komputer" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

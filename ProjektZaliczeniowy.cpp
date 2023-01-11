@@ -30,7 +30,7 @@ public:
 };
 
 
-class grupa
+class grupa:public druzyna
 {
 public:
 
@@ -220,11 +220,11 @@ public:
     }
 
 };
-class Osemka
+class Osemka:public druzyna
 {
 public:
-grupa teams16[2];
-
+int wynik;
+druzyna druzynyPucharowe[2];
 
 
 };
@@ -575,9 +575,10 @@ int j =0;
     for (int i = 0; i < MAX_SIZE; ++i)
     {
 
+        osiem[i].druzynyPucharowe[i]= grupy[i].teams[i];
 
     }
-    osiem[0].teams16[1]=grupy[1].teams[1];
+
 
 
     return 0;
