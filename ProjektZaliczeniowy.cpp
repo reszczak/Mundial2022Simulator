@@ -30,7 +30,7 @@ public:
 };
 
 
-class grupa:public druzyna
+class grupa
 {
 public:
 
@@ -226,7 +226,12 @@ public:
 int wynik;
 druzyna druzynyPucharowe[2];
 
+void wypisz()
+{
+    cout << druzynyPucharowe[0].nazwa<<"       "<<druzynyPucharowe[0].punkty;
+    cout << druzynyPucharowe[1].nazwa<<"       "<<druzynyPucharowe[1].punkty;
 
+}
 };
 class Czworka
 {
@@ -572,13 +577,28 @@ int j =0;
       const int mecze16=8;
 
       Osemka osiem[mecze16];
-    for (int i = 0; i < MAX_SIZE; ++i)
-    {
 
-        osiem[i].druzynyPucharowe[i]= grupy[i].teams[i];
 
-    }
+        osiem[0].druzynyPucharowe[0]=grupy[0].teams[0];
+        osiem[0].druzynyPucharowe[1]=grupy[1].teams[1];
+        osiem[1].druzynyPucharowe[0]=grupy[0].teams[1];
+        osiem[1].druzynyPucharowe[1]=grupy[1].teams[0];
+        osiem[2].druzynyPucharowe[0]=grupy[2].teams[0];
+        osiem[2].druzynyPucharowe[1]=grupy[3].teams[1];
+        osiem[3].druzynyPucharowe[0]=grupy[2].teams[1];
+        osiem[3].druzynyPucharowe[1]=grupy[3].teams[0];
+        osiem[4].druzynyPucharowe[0]=grupy[4].teams[0];
+        osiem[4].druzynyPucharowe[1]=grupy[5].teams[1];
+        osiem[5].druzynyPucharowe[0]=grupy[4].teams[1];
+        osiem[5].druzynyPucharowe[1]=grupy[5].teams[0];
+        osiem[6].druzynyPucharowe[0]=grupy[6].teams[0];
+        osiem[6].druzynyPucharowe[1]=grupy[7].teams[1];
+        osiem[7].druzynyPucharowe[0]=grupy[6].teams[1];
+        osiem[7].druzynyPucharowe[1]=grupy[7].teams[0];
 
+
+
+osiem[0].wypisz();
 
 
     return 0;
