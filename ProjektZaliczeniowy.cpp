@@ -89,8 +89,8 @@ public:
     {
         *dr1 = 0;
         *dr2 = 0;
-        *wynik1 = 0;
-        *wynik2 = 0;
+
+
         int gol1 = 0;
         int gol2 = 0;
         int gol[6];
@@ -230,13 +230,7 @@ public:
         cout << " Wynik po karnych: " << druzyna1 << "  " << *dr1 << " (" << gol1 << ")  -  " << *dr2 << " (" << gol2 << ")  " << druzyna2 << endl;
     }
 
-    int run()
-    {
-        if (meczpucharowy() = 'dr1')
-        {
 
-        }
-    }
 };
 class Osemka:public druzyna
 {
@@ -246,8 +240,8 @@ druzyna druzynyPucharowe[2];
 
 void wypisz()
 {
-    cout << druzynyPucharowe[0].nazwa<<"       "<<druzynyPucharowe[0].punkty;
-    cout << druzynyPucharowe[1].nazwa<<"       "<<druzynyPucharowe[1].punkty;
+
+    cout << druzynyPucharowe[0].nazwa<<"                         "<<druzynyPucharowe[0].punkty<< "                                            "<< druzynyPucharowe[1].nazwa<<"                         "<<druzynyPucharowe[1].punkty<<endl;
 
 }
 };
@@ -614,7 +608,12 @@ int j =0;
         osiem[6].druzynyPucharowe[1]=grupy[7].teams[1];
         osiem[7].druzynyPucharowe[0]=grupy[6].teams[1];
         osiem[7].druzynyPucharowe[1]=grupy[7].teams[0];
-        osiem[0].wypisz();
+
+
+    for (int i = 0; i < 8; ++i) {
+        osiem[i].wypisz();
+    }
+        //osiem[0].wypisz();
 
 
 
