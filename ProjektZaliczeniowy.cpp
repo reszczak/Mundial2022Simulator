@@ -85,7 +85,7 @@ public:
         szansa1 = (waga1 / (waga1 + waga2)) * 100;
         return szansa1;
     }
-    void meczpucharowy(int* dr1, int* dr2, double waga1, double waga2, int* wynik1, int* wynik2, string druzyna1, string druzyna2)
+    string meczpucharowy(int* dr1, int* dr2, double waga1, double waga2, string druzyna1, string druzyna2)
     {
         *dr1 = 0;
         *dr2 = 0;
@@ -112,18 +112,24 @@ public:
                 *dr2 = *dr2 + 1;
             }
         }
+        cout << "Wynik : " << druzyna1 << "   " << *dr1 << "  -  " << *dr2 << "   " << druzyna2;
         if (*dr1 > *dr2)
         {
-            *wynik1 = *wynik1 + 1;
+            return "dr1";
         }
-        if (*dr2 > *dr2)
+        if (*dr2 > *dr1)
         {
-            *wynik2 = *wynik2 + 1;
+            return "dr2";
         }
-        cout << "Wynik: " << druzyna1 << "   " << *dr1 << "  -  " << *dr2 << "   " << druzyna2;
+        if(*dr1==*dr2)
+        {
+            return "draw";
+        }
+
+
 
     }
-    void dogrywka(int* dr1, int* dr2, double waga1, double waga2, int* wynik1, int* wynik2, string druzyna1, string druzyna2)
+    string dogrywka(int* dr1, int* dr2, double waga1, double waga2, string druzyna1, string druzyna2)
     {
         cout << endl;
         int gol1 = 0;
@@ -146,15 +152,19 @@ public:
                 *dr2 = *dr2 + 1;
             }
         }
+        cout << "Wynik po dogrywce : " << druzyna1 << "   " << *dr1 << "  -  " << *dr2 << "   " << druzyna2;
         if (*dr1 > *dr2)
         {
-            *wynik1 = *wynik1 + 1;
+            return "dr1";
         }
         if (*dr2 > *dr1)
         {
-            *wynik2 = *wynik2 + 1;
+            return "dr2";
         }
-        cout << "Wynik: " << druzyna1 << "   " << *dr1 << "  -  " << *dr2 << "   " << druzyna2;
+        if (*dr1==*dr2)
+        {
+            return "draw";
+        }
     }
     int randomKarne() {
         Sleep(400);
@@ -162,7 +172,7 @@ public:
         int czygol = rand() % 2;
         return czygol;
     }
-        void karne(int* dr1, int* dr2, int* wynik1, int* wynik2, string druzyna1, string druzyna2)
+        string karne(int* dr1, int* dr2, string druzyna1, string druzyna2)
     {
         cout << endl;
         int gol1 = 0;
@@ -203,22 +213,30 @@ public:
                 gol2 = gol2 + 1;
 
             }
-            cout << "seria " << seria << " : " << gol1 << " - " << gol2 << endl;
+            cout << "Seria " << seria << " : " << gol1 << " - " << gol2 << endl;
             seria++;
 
         }
         if (gol1 > gol2)
         {
-            *wynik1 = *wynik1 + 1;
+            return "dr1";
         }
         if (gol2 > gol1)
         {
-            *wynik2 = *wynik2 + 1;
+            return "dr2";
         }
 
-        cout << " Wynik: " << druzyna1 << "  " << *dr1 << " (" << gol1 << ")  -  " << *dr2 << " (" << gol2 << ")  " << druzyna2 << endl;
+
+        cout << " Wynik po karnych: " << druzyna1 << "  " << *dr1 << " (" << gol1 << ")  -  " << *dr2 << " (" << gol2 << ")  " << druzyna2 << endl;
     }
 
+    int run()
+    {
+        if (meczpucharowy() = 'dr1')
+        {
+
+        }
+    }
 };
 class Osemka:public druzyna
 {
@@ -578,6 +596,7 @@ int j =0;
 
       Osemka osiem[mecze16];
 
+//to bedzie trzeba zautomatyzowac ale trzeba leciec dalej z projektem
 
         osiem[0].druzynyPucharowe[0]=grupy[0].teams[0];
         osiem[0].druzynyPucharowe[1]=grupy[1].teams[1];
@@ -595,10 +614,10 @@ int j =0;
         osiem[6].druzynyPucharowe[1]=grupy[7].teams[1];
         osiem[7].druzynyPucharowe[0]=grupy[6].teams[1];
         osiem[7].druzynyPucharowe[1]=grupy[7].teams[0];
+        osiem[0].wypisz();
 
 
 
-osiem[0].wypisz();
 
 
     return 0;
