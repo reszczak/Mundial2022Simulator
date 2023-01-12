@@ -114,7 +114,7 @@ public:
                 druzynyPucharowe[1].wynik = druzynyPucharowe[1].wynik + 1;
             }
         }
-        cout << "Wynik : " << druzynyPucharowe[0].nazwa << "   " << druzynyPucharowe[0].wynik << "  -  " << druzynyPucharowe[1].wynik << "   " << druzynyPucharowe[1].nazwa;
+        cout << "Wynik : " << druzynyPucharowe[0].nazwa << "   " << druzynyPucharowe[0].wynik << "  -  " << druzynyPucharowe[1].wynik << "   " << druzynyPucharowe[1].nazwa<<endl;
         if (druzynyPucharowe[0].wynik > druzynyPucharowe[1].wynik)
         {
             return "dr1";
@@ -154,7 +154,7 @@ public:
                 druzynyPucharowe[1].wynik = druzynyPucharowe[1].wynik + 1;
             }
         }
-        cout << "Wynik po dogrywce : " << druzynyPucharowe[0].nazwa << "   " << druzynyPucharowe[0].wynik << "  -  " << druzynyPucharowe[1].wynik << "   " << druzynyPucharowe[1].nazwa;
+        cout << "Wynik po dogrywce : " << druzynyPucharowe[0].nazwa << "   " << druzynyPucharowe[0].wynik << "  -  " << druzynyPucharowe[1].wynik << "   " << druzynyPucharowe[1].nazwa<<endl;
         if (druzynyPucharowe[0].wynik > druzynyPucharowe[1].wynik)
         {
             return "dr1";
@@ -486,11 +486,62 @@ int j =0;
         osiem[7].druzynyPucharowe[1]=grupy[7].teams[0];
 
 
+        meczycho cztery[4];
+    /*for (int i = 0; i < 8; ++i) {
+        osiem[i].run();
+    }*/
+    string wynikJednejOsmej[8];
+    j=0;
+    for (int i = 0; i < 8; ++i) {
+        wynikJednejOsmej[i] = osiem[i].run();
+        if(j==2)
+        {
+            j=0;
+        }
+        if(wynikJednejOsmej[i]=="dr1")
+        {
+            cztery[i/2].druzynyPucharowe[j]=osiem[i].druzynyPucharowe[0];
+        }
+        if(wynikJednejOsmej[i]=="dr2")
+        {
+            cztery[i/2].druzynyPucharowe[j]=osiem[i].druzynyPucharowe[1];
+        }
+        cout <<endl;
+        j++;
 
-        //osiem[0].wypisz();
+    }
+   /* wynikJednejOsmej[0] = osiem[0].run();
+    if(wynikJednejOsmej[0]=="dr1")
+    {
+        cztery[0].druzynyPucharowe[0]=osiem[0].druzynyPucharowe[0];
+    }
+    if(wynikJednejOsmej[0]=="dr2")
+    {
+        cztery[0].druzynyPucharowe[0]=osiem[0].druzynyPucharowe[1];
+    }
+    wynikJednejOsmej[1] = osiem[1].run();
+    if(wynikJednejOsmej[1]=="dr1")
+    {
+        cztery[0].druzynyPucharowe[1]=osiem[1].druzynyPucharowe[0];
+    }
+    if(wynikJednejOsmej[0]=="dr2")
+    {
+        cztery[0].druzynyPucharowe[1]=osiem[1].druzynyPucharowe[1];
+    }
+    wynikJednejOsmej[2] = osiem[2].run();
+    if(wynikJednejOsmej[1]=="dr1")
+    {
+        cztery[1].druzynyPucharowe[0]=osiem[1].druzynyPucharowe[0];
+    }
+    if(wynikJednejOsmej[0]=="dr2")
+    {
+        cztery[1].druzynyPucharowe[0]=osiem[1].druzynyPucharowe[1];
+    }*/
 
-
-
+    for (int i = 0; i < 4; ++i)
+    {
+    cztery[i].run();
+    }
 
 
     return 0;

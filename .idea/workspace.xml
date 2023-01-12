@@ -15,6 +15,7 @@
     <list default="true" id="f7bec306-8dff-4178-83c0-33c2b5480dc4" name="Changes" comment="Robimy dalej">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjektZaliczeniowy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektZaliczeniowy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjektZaliczeniowy.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektZaliczeniowy.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +98,7 @@
       <workItem from="1673356042805" duration="15336000" />
       <workItem from="1673464377420" duration="3414000" />
       <workItem from="1673488733607" duration="1101000" />
-      <workItem from="1673495588489" duration="2259000" />
+      <workItem from="1673495588489" duration="4055000" />
     </task>
     <task id="LOCAL-00001" summary="elo dziala jest git">
       <created>1673225420257</created>
