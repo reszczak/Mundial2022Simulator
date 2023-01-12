@@ -19,6 +19,7 @@ public:
     int bilans;
     string nazwa;
     string JakaGrupa;
+    int wynik;
 
 
     void wypisz()
@@ -79,16 +80,17 @@ class meczycho
 {
 public:
 
+    druzyna druzynyPucharowe[2];
     double szansa(double waga1, double waga2)
     {
         double szansa1;
-        szansa1 = (waga1 / (waga1 + waga2)) * 100;
+        szansa1 = (druzynyPucharowe[0].ocena / (druzynyPucharowe[0].ocena + druzynyPucharowe[0].ocena)) * 100;
         return szansa1;
     }
-    string meczpucharowy(int* dr1, int* dr2, double waga1, double waga2, string druzyna1, string druzyna2)
+    string meczpucharowy()
     {
-        *dr1 = 0;
-        *dr2 = 0;
+        druzynyPucharowe[0].wynik= 0;
+        druzynyPucharowe[1].wynik = 0;
 
 
         int gol1 = 0;
@@ -101,27 +103,27 @@ public:
             Sleep(100);
             srand(time(NULL));
             gol[i] = rand() % 101;
-            if (gol[i] < szansa(waga1, waga2))
+            if (gol[i] < szansa(druzynyPucharowe[0].ocena, druzynyPucharowe[1].ocena))
             {
 
-                *dr1 = *dr1 + 1;
+                druzynyPucharowe[0].wynik = druzynyPucharowe[0].wynik + 1;
 
             }
             else
             {
-                *dr2 = *dr2 + 1;
+                druzynyPucharowe[1].wynik = druzynyPucharowe[1].wynik + 1;
             }
         }
-        cout << "Wynik : " << druzyna1 << "   " << *dr1 << "  -  " << *dr2 << "   " << druzyna2;
-        if (*dr1 > *dr2)
+        cout << "Wynik : " << druzynyPucharowe[0].nazwa << "   " << druzynyPucharowe[0].wynik << "  -  " << druzynyPucharowe[1].wynik << "   " << druzynyPucharowe[1].nazwa;
+        if (druzynyPucharowe[0].wynik > druzynyPucharowe[1].wynik)
         {
             return "dr1";
         }
-        if (*dr2 > *dr1)
+        if (druzynyPucharowe[1].wynik > druzynyPucharowe[0].wynik)
         {
             return "dr2";
         }
-        if(*dr1==*dr2)
+        if(druzynyPucharowe[0].wynik==druzynyPucharowe[1].wynik)
         {
             return "draw";
         }
@@ -129,7 +131,7 @@ public:
 
 
     }
-    string dogrywka(int* dr1, int* dr2, double waga1, double waga2, string druzyna1, string druzyna2)
+    string dogrywka()
     {
         cout << endl;
         int gol1 = 0;
@@ -141,27 +143,27 @@ public:
             Sleep(100);
             srand(time(NULL));
             gol[i] = rand() % 101;
-            if (gol[i] < szansa(waga1, waga2))
+            if (gol[i] < szansa(druzynyPucharowe[0].ocena, druzynyPucharowe[1].ocena))
             {
 
-                *dr1 = *dr1 + 1;
+                druzynyPucharowe[0].wynik = druzynyPucharowe[0].wynik + 1;
 
             }
             else
             {
-                *dr2 = *dr2 + 1;
+                druzynyPucharowe[1].wynik = druzynyPucharowe[1].wynik + 1;
             }
         }
-        cout << "Wynik po dogrywce : " << druzyna1 << "   " << *dr1 << "  -  " << *dr2 << "   " << druzyna2;
-        if (*dr1 > *dr2)
+        cout << "Wynik po dogrywce : " << druzynyPucharowe[0].nazwa << "   " << druzynyPucharowe[0].wynik << "  -  " << druzynyPucharowe[1].wynik << "   " << druzynyPucharowe[1].nazwa;
+        if (druzynyPucharowe[0].wynik > druzynyPucharowe[1].wynik)
         {
             return "dr1";
         }
-        if (*dr2 > *dr1)
+        if (druzynyPucharowe[1].wynik > druzynyPucharowe[0].wynik)
         {
             return "dr2";
         }
-        if (*dr1==*dr2)
+        if (druzynyPucharowe[0].wynik==druzynyPucharowe[1].wynik)
         {
             return "draw";
         }
@@ -172,7 +174,7 @@ public:
         int czygol = rand() % 2;
         return czygol;
     }
-        string karne(int* dr1, int* dr2, string druzyna1, string druzyna2)
+        string karne()
     {
         cout << endl;
         int gol1 = 0;
@@ -227,41 +229,13 @@ public:
         }
 
 
-        cout << " Wynik po karnych: " << druzyna1 << "  " << *dr1 << " (" << gol1 << ")  -  " << *dr2 << " (" << gol2 << ")  " << druzyna2 << endl;
+        cout << " Wynik po karnych: " << druzynyPucharowe[0].nazwa << "  " << druzynyPucharowe[0].wynik << " (" << gol1 << ")  -  " << druzynyPucharowe[1].wynik << " (" << gol2 << ")  " << druzynyPucharowe[1].nazwa << endl;
     }
 
 
 };
-class Osemka:public druzyna
-{
-public:
-int wynik;
-druzyna druzynyPucharowe[2];
-
-void wypisz()
-{
-
-    cout << druzynyPucharowe[0].nazwa<<"                         "<<druzynyPucharowe[0].punkty<< "                                            "<< druzynyPucharowe[1].nazwa<<"                         "<<druzynyPucharowe[1].punkty<<endl;
-
-}
-};
-class Czworka
-{
-public:
-
-};
-class Dwojka
-{
-public:
-
-};
-class run
-{
-
-public:
 
 
-};
 int read_data(string filename, double* grades) {
     int size = 0;
     ifstream file(filename);
@@ -586,11 +560,11 @@ int j =0;
           grupy[i].sortuj();
           grupy[i].wypisz2();
       }
-      const int mecze16=8;
 
-      Osemka osiem[mecze16];
 
-//to bedzie trzeba zautomatyzowac ale trzeba leciec dalej z projektem
+      meczycho osiem[8];
+
+//to bedzie trzeba zautomatyzowac, ale trzeba leciec dalej z projektem
 
         osiem[0].druzynyPucharowe[0]=grupy[0].teams[0];
         osiem[0].druzynyPucharowe[1]=grupy[1].teams[1];
@@ -610,9 +584,7 @@ int j =0;
         osiem[7].druzynyPucharowe[1]=grupy[7].teams[0];
 
 
-    for (int i = 0; i < 8; ++i) {
-        osiem[i].wypisz();
-    }
+
         //osiem[0].wypisz();
 
 
