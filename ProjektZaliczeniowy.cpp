@@ -441,7 +441,10 @@ int main()
         druz[i].wypisz();
     }
     cout << endl << endl << endl << endl;
-
+    delete[] points;
+    delete[] balance;
+    delete[] team;
+    delete[] group;
 
     const int IloscGrup = 8;
     grupa grupy[IloscGrup];
@@ -492,7 +495,7 @@ int j =0;
     }*/
     string wynikJednejOsmej[8];
     j=0;
-    for (int i = 0; i < 8; ++i) {
+    for (int i = 0; i < 8; i++) {
         wynikJednejOsmej[i] = osiem[i].run();
         if(j==2)
         {
