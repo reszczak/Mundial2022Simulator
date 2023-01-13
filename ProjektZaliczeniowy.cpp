@@ -449,37 +449,57 @@ int main() {
         j++;
 
     }
-    /* wynikJednejOsmej[0] = osiem[0].run();
-     if(wynikJednejOsmej[0]=="dr1")
-     {
-         cztery[0].druzynyPucharowe[0]=osiem[0].druzynyPucharowe[0];
-     }
-     if(wynikJednejOsmej[0]=="dr2")
-     {
-         cztery[0].druzynyPucharowe[0]=osiem[0].druzynyPucharowe[1];
-     }
-     wynikJednejOsmej[1] = osiem[1].run();
-     if(wynikJednejOsmej[1]=="dr1")
-     {
-         cztery[0].druzynyPucharowe[1]=osiem[1].druzynyPucharowe[0];
-     }
-     if(wynikJednejOsmej[0]=="dr2")
-     {
-         cztery[0].druzynyPucharowe[1]=osiem[1].druzynyPucharowe[1];
-     }
-     wynikJednejOsmej[2] = osiem[2].run();
-     if(wynikJednejOsmej[1]=="dr1")
-     {
-         cztery[1].druzynyPucharowe[0]=osiem[1].druzynyPucharowe[0];
-     }
-     if(wynikJednejOsmej[0]=="dr2")
-     {
-         cztery[1].druzynyPucharowe[0]=osiem[1].druzynyPucharowe[1];
-     }*/
+    cout << "Jedna CZWARTA:"<< endl<< endl<<endl;
+    string wynikJednejCzwartej[4];
+    meczycho dwa[2];
 cout << "Jedna CZWARTA:"<< endl<< endl<<endl;
-    for (int i = 0; i < 4; ++i) {
-        cztery[i].run();
+    j = 0;
+    for (int i = 0; i < 4; i++) {
+        wynikJednejCzwartej[i] = cztery[i].run();
+        if (j == 2) {
+            j = 0;
+        }
+        if (wynikJednejCzwartej[i] == "dr1") {
+            dwa[i / 2].druzynyPucharowe[j] = cztery[i].druzynyPucharowe[0];
+        }
+        if (wynikJednejCzwartej[i] == "dr2") {
+            dwa[i / 2].druzynyPucharowe[j] = cztery[i].druzynyPucharowe[1];
+        }
+        cout << endl;
+        j++;
+
     }
+    string wynikJednejDrugiej;
+    meczycho jeden;
+    cout << "POLFINAL: " << endl<<endl<<endl;
+    for (int i = 0; i < 2; i++) {
+        wynikJednejCzwartej[i] = dwa[i].run();
+        if (j == 2) {
+            j = 0;
+        }
+        if (wynikJednejCzwartej[i] == "dr1") {
+            jeden.druzynyPucharowe[j] = dwa[i].druzynyPucharowe[0];
+        }
+        if (wynikJednejCzwartej[i] == "dr2") {
+            jeden.druzynyPucharowe[j] = dwa[i].druzynyPucharowe[1];
+        }
+        cout << endl;
+        j++;
+
+    }
+
+    string wynikFinalu = jeden.run();
+    if()
+    {
+
+    }
+    if()
+    {
+        
+    }
+
+//kopilot
+
 
 
     return 0;
