@@ -489,16 +489,18 @@ cout << "Jedna CZWARTA:"<< endl<< endl<<endl;
     }
 
     string wynikFinalu = jeden.run();
-    if()
-    {
 
-    }
-    if()
+    if(wynikFinalu == "dr1")
     {
-        
+        cout << "WYGRANA: " << jeden.druzynyPucharowe[0].nazwa << endl;
+    }
+    if(wynikFinalu == "dr2")
+    {
+        cout << "WYGRANA: " << jeden.druzynyPucharowe[1].nazwa << endl;
     }
 
-//kopilot
+
+
 
 
 
