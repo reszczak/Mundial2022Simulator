@@ -14,7 +14,7 @@
   <component name="ChangeListManager">
     <list default="true" id="61bbbe2f-68a5-4910-9078-0f531e914803" name="Changes" comment="test jetbrains">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjektZaliczeniowy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektZaliczeniowy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjektZaliczeniowy.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektZaliczeniowy.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +99,8 @@
       <workItem from="1673488733607" duration="1101000" />
       <workItem from="1673495588489" duration="4753000" />
       <workItem from="1673576608526" duration="220000" />
+      <workItem from="1673576841130" duration="476000" />
+      <workItem from="1673885685316" duration="22000" />
     </task>
     <task id="LOCAL-00001" summary="elo dziala jest git">
       <created>1673225420257</created>
