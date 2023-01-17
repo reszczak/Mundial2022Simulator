@@ -551,13 +551,26 @@ int main() {
 
     cout << "FINAŁ: " << endl<<setw(85) << setfill('#')<<" "<<endl<<endl;
     string wynikFinalu = jeden.run();
-
+cout << "Nacisnij enter aby przejsc do ceremonii wręczenia pucharu"<<endl;
+    getchar();
     if (wynikFinalu == "dr1") {
-        cout << "Zwyciezca: " << jeden.druzynyPucharowe[0].nazwa << endl;
+        cout << "MUNDIAL ZWYCIEZA: " << endl;
+        Sleep(5000);
+        for (int i = 0; i < 10000; ++i) {
+            cout << jeden.druzynyPucharowe[0].nazwa << " ";
+if(i%70==0)cout <<endl;
+        }
     }
     else {
-        cout << "Zwyciezca: " << jeden.druzynyPucharowe[1].nazwa << endl;
+        cout << "MUNDIAL ZWYCIEZA: " << endl;
+        Sleep(5000);
+        for (int i = 0; i < 10000; ++i) {
+            cout << jeden.druzynyPucharowe[1].nazwa << " ";
+if (i % 70 == 0)cout << endl;
+
+        }
     }
+
 
 
 
