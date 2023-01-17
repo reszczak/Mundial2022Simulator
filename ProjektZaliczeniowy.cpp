@@ -24,8 +24,7 @@ public:
 
 
     void wypisz() {
-        cout << setw(0) << setfill(' ') << nazwa << setw(20 - nazwa.size()) << setfill(' ') << punkty << setw(10)
-             << setfill(' ') << bilans << endl;
+        cout << setw(0) << setfill(' ') << nazwa << endl;
 
     }
 
@@ -59,12 +58,21 @@ public:
     }
 
     void wypisz2() {
-        cout << "Grupa " << teams[0].JakaGrupa << endl;
+
+        cout << "GRUPA " << teams[0].JakaGrupa << endl;
+
+Sleep(500);
         for (int i = 0; i < 4; i++) {
-            cout << teams[i].nazwa << setw(20 - teams[i].nazwa.size()) << setfill(' ') << teams[i].punkty << setw(10)
-                 << setfill(' ') << teams[i].bilans << endl;
+            cout << setw(48) << setfill('#') <<" "<< endl;
+            cout << "#  "<<teams[i].nazwa << setw(20 - teams[i].nazwa.size()) << setfill(' ') <<"   #   "<< teams[i].punkty <<"   #   "<< setw(10)
+                 << setfill(' ') <<"   #   "<< teams[i].bilans <<"   #"<< endl;
+            if (i==3) {
+
+                cout << setw(48) << setfill('#') << " " << endl;
+            }
 
         }
+        cout << endl;
 
     }
 
@@ -82,6 +90,7 @@ public:
     }
 
     string meczpucharowy() {
+Sleep(500);
         druzynyPucharowe[0].wynik = 0;
         druzynyPucharowe[1].wynik = 0;
 
@@ -90,7 +99,7 @@ public:
         int gol2 = 0;
         int gol[6];
         int size = rand() % 6;
-        cout << "Mecz: " << endl;
+        cout << "MECZ: " << endl;
         for (int i = 0; i < size; i++) {
 
             gol[i] = rand() % 101;
@@ -102,7 +111,7 @@ public:
                 druzynyPucharowe[1].wynik = druzynyPucharowe[1].wynik + 1;
             }
         }
-        cout << "Wynik : " << druzynyPucharowe[0].nazwa << "   " << druzynyPucharowe[0].wynik << "  -  "
+        cout << "WYNIK : " << druzynyPucharowe[0].nazwa << "   " << druzynyPucharowe[0].wynik << "  -  "
              << druzynyPucharowe[1].wynik << "   " << druzynyPucharowe[1].nazwa << endl;
         if (druzynyPucharowe[0].wynik > druzynyPucharowe[1].wynik) {
             return "dr1";
@@ -118,6 +127,7 @@ public:
     }
 
     string dogrywka() {
+        Sleep(500);
         cout << endl;
         int gol1 = 0;
         int gol2 = 0;
@@ -135,7 +145,7 @@ public:
                 druzynyPucharowe[1].wynik = druzynyPucharowe[1].wynik + 1;
             }
         }
-        cout << "Wynik po dogrywce : " << druzynyPucharowe[0].nazwa << "   " << druzynyPucharowe[0].wynik << "  -  "
+        cout << "WYNIK PO DOGRYWCE : " << druzynyPucharowe[0].nazwa << "   " << druzynyPucharowe[0].wynik << "  -  "
              << druzynyPucharowe[1].wynik << "   " << druzynyPucharowe[1].nazwa << endl;
         if (druzynyPucharowe[0].wynik > druzynyPucharowe[1].wynik) {
             return "dr1";
@@ -155,7 +165,7 @@ public:
     }
 
     string karne() {
-        cout << endl;
+
         int gol1 = 0;
         int gol2 = 0;
         int seria = 1;
@@ -168,7 +178,7 @@ public:
                 gol2 = gol2 + 1;
 
             }
-            cout << "seria " << seria << " : " << gol1 << " - " << gol2 << endl;
+            cout << "Seria " << seria << " : " << gol1 << " - " << gol2 << endl;
             seria++;
             if (i > 2) {
                 if (((gol1 == 3) && (gol2 == 0)) || ((gol1 == 0) && (gol2 == 3)) || ((gol1 == 4) && (gol2 == 1)) ||
@@ -191,7 +201,7 @@ public:
             seria++;
 
         }
-        cout << " Wynik po karnych: " << druzynyPucharowe[0].nazwa << "  " << druzynyPucharowe[0].wynik << " (" << gol1
+        cout << " WYNIK PO KARNYCH: " << druzynyPucharowe[0].nazwa << "  " << druzynyPucharowe[0].wynik << " (" << gol1
              << ")  -  " << druzynyPucharowe[1].wynik << " (" << gol2 << ")  " << druzynyPucharowe[1].nazwa << endl;
         if (gol1 > gol2) {
             return "dr1";
@@ -212,6 +222,7 @@ public:
         if (wynikmecz == "draw") {
              wynikdogrywka= dogrywka();
             if (wynikdogrywka == "draw") {
+                cout << "KARNE:" << endl;
                 wynikkarne=karne();
                 if (wynikkarne == "dr1") {
                     return "dr1";
@@ -290,6 +301,7 @@ double szansa(double waga1, double waga2) {
 
 
 void mecz(int *dr1, int *dr2, int *bil1, int *bil2, double waga1, double waga2, string *druzyna1, string *druzyna2) {
+    Sleep(500);
     int gol1 = 0;
     int gol2 = 0;
     int gol[6];
@@ -325,6 +337,12 @@ void mecz(int *dr1, int *dr2, int *bil1, int *bil2, double waga1, double waga2, 
 }
 
 int main() {
+    cout << "SYMULATOR MUNDIALU KATAR 2022" << endl;
+    cout << "Witaj w symulatorze mundialu katar 2022. W tym symulatorze bedziesz mial mozliwosc zobaczenia wynikow meczow"
+            " grupowych, 1/8, 1/4, 1/2 i finału. Wszystko to wraz z wynikami karnych. " << endl;
+    cout<<"Aby rozpoczac wcisnij enter"<<endl;
+    getchar();
+
     srand(time(NULL));
     double grade[MAX_SIZE];
     string *group = new string[MAX_SIZE];
@@ -341,7 +359,17 @@ int main() {
         points[i] = 0;
         balance[i] = 0;
     }
-
+    druzyna druz[32];
+    for (int i = 0; i < MAX_SIZE; ++i) {
+        druz[i].nazwa = team[i];
+    }
+    cout << "Druzyny biorace udzial w turnieju: " << endl;
+    for (int i = 0; i < MAX_SIZE; i++) {
+        cout<<i+1<<".";
+        druz[i].wypisz();
+    }
+    cout << "Nacisnij enter aby zaczac symulacje"<<endl;
+    getchar();
     //Faza GRUPOWA
 
 
@@ -366,10 +394,21 @@ int main() {
                  &team[i + 3]);
             mecz(&points[i + 1], &points[i + 2], &balance[i + 1], &balance[i + 2], grade[i + 1], grade[i + 2],
                  &team[i + 1], &team[i + 2]);
-            cout << endl;
+            if(i==28){
+                cout << endl<<"Nacisnij enter aby wyswietlic tabele grup"<<endl;
+                getchar();
+            }
+            else
+            {
+                cout <<endl << "Nacisnij enter aby przejsc do kolejnej grupy"<<endl;
+                getchar();
+            }
+
+
+
         }
     }
-    druzyna druz[32];
+
     for (int i = 0; i < MAX_SIZE; i++) {
 
         druz[i].ocena = grade[i];
@@ -378,9 +417,7 @@ int main() {
         druz[i].nazwa = team[i];
         druz[i].JakaGrupa = group[i];
     }
-    for (int i = 0; i < MAX_SIZE; i++) {
-        druz[i].wypisz();
-    }
+
     cout << endl << endl << endl << endl;
     delete[] points;
     delete[] balance;
@@ -407,8 +444,6 @@ int main() {
 
     meczycho osiem[8];
 
-//to bedzie trzeba zautomatyzowac, ale trzeba leciec dalej z projektem
-
     osiem[0].druzynyPucharowe[0] = grupy[0].teams[0];
     osiem[0].druzynyPucharowe[1] = grupy[1].teams[1];
     osiem[1].druzynyPucharowe[0] = grupy[0].teams[1];
@@ -428,10 +463,9 @@ int main() {
 
 
     meczycho cztery[4];
-    /*for (int i = 0; i < 8; ++i) {
-        osiem[i].run();
-    }*/
-    cout << "JEDNA OSMA: "<<endl<<endl<<endl;
+    cout << endl<<"Nacisnij enter aby przejsc do fazy pucharowej"<<endl;
+    getchar();
+    cout << "JEDNA OSMA: "<< endl<<setw(85) << setfill('#')<<" "<<endl<<endl;
     string wynikJednejOsmej[8];
     j = 0;
     for (int i = 0; i < 8; i++) {
@@ -448,11 +482,14 @@ int main() {
         cout << endl;
         j++;
 
-    }
-    cout << "Jedna CZWARTA:"<< endl<< endl<<endl;
+    }cout <<setw(85) << setfill('#')<<" "<< endl;
+    cout << endl<<"Aby przejsc do meczow cwiercfinalowych wcisnij enter";
+    cout << endl<<endl;
+    getchar();
+    cout << "CWIERCFINALY:"<< endl<<setw(85) << setfill('#')<<" "<<endl<<endl;
     string wynikJednejCzwartej[4];
     meczycho dwa[2];
-cout << "Jedna CZWARTA:"<< endl<< endl<<endl;
+
     j = 0;
     for (int i = 0; i < 4; i++) {
         wynikJednejCzwartej[i] = cztery[i].run();
@@ -469,9 +506,14 @@ cout << "Jedna CZWARTA:"<< endl<< endl<<endl;
         j++;
 
     }
+    cout <<setw(85) << setfill('#')<<" "<< endl;
+    cout << endl<<"Aby przejsc do meczow polfinalowych wcisnij enter";
+    cout << endl<<endl;
+    getchar();
     string wynikJednejDrugiej;
     meczycho jeden;
-    cout << "POLFINAL: " << endl<<endl<<endl;
+    meczycho trzeci;
+    cout << "POLFINALY: " << endl<<setw(85) << setfill('#')<<" "<<endl<<endl;
     for (int i = 0; i < 2; i++) {
         wynikJednejCzwartej[i] = dwa[i].run();
         if (j == 2) {
@@ -479,24 +521,42 @@ cout << "Jedna CZWARTA:"<< endl<< endl<<endl;
         }
         if (wynikJednejCzwartej[i] == "dr1") {
             jeden.druzynyPucharowe[j] = dwa[i].druzynyPucharowe[0];
+            trzeci.druzynyPucharowe[j] = dwa[i].druzynyPucharowe[1];
         }
         if (wynikJednejCzwartej[i] == "dr2") {
             jeden.druzynyPucharowe[j] = dwa[i].druzynyPucharowe[1];
+            trzeci.druzynyPucharowe[j] = dwa[i].druzynyPucharowe[0];
         }
         cout << endl;
         j++;
 
     }
+    cout <<setw(85) << setfill('#')<<" "<< endl;
+    cout << endl<<"Aby przejsc do meczu o 3 miejsce wcisnij enter";
+    cout << endl<<endl;
+    getchar();
+    cout << "MECZ O TRZECIE MIEJSCE: " << endl<<setw(85) << setfill('#')<<" "<<endl<<endl;
+    string wynikTrzecie = trzeci.run();
 
+    if (wynikTrzecie == "dr1") {
+        cout << "Trzecie miejsce zdobywa: " << trzeci.druzynyPucharowe[0].nazwa << endl;
+    }
+    else {
+        cout << "Trzecie miejsce zdobywa: " << trzeci.druzynyPucharowe[1].nazwa << endl;
+    }
+    cout <<setw(85) << setfill('#')<<" "<< endl;
+    cout << endl<<"Aby przejsc do finalu wcisnij enter";
+    cout << endl<<endl;
+    getchar();
+
+    cout << "FINAŁ: " << endl<<setw(85) << setfill('#')<<" "<<endl<<endl;
     string wynikFinalu = jeden.run();
 
-    if(wynikFinalu == "dr1")
-    {
-        cout << "WYGRANA: " << jeden.druzynyPucharowe[0].nazwa << endl;
+    if (wynikFinalu == "dr1") {
+        cout << "Zwyciezca: " << jeden.druzynyPucharowe[0].nazwa << endl;
     }
-    if(wynikFinalu == "dr2")
-    {
-        cout << "WYGRANA: " << jeden.druzynyPucharowe[1].nazwa << endl;
+    else {
+        cout << "Zwyciezca: " << jeden.druzynyPucharowe[1].nazwa << endl;
     }
 
 
@@ -506,6 +566,5 @@ cout << "Jedna CZWARTA:"<< endl<< endl<<endl;
 
     return 0;
 }
-
 
 
