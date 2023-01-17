@@ -16,7 +16,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjektZaliczeniowy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektZaliczeniowy.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjektZaliczeniowy.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektZaliczeniowy.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teams.txt" beforeDir="false" afterPath="$PROJECT_DIR$/teams.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +66,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="C/C++ File.ProjektZaliczeniowy.cpp">
+  <component name="RunManager" selected="C/C++ File.dawidowy komputer">
     <configuration name="ProjektZaliczeniowy.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ProjektZaliczeniowy" TARGET_NAME="ProjektZaliczeniowy.cpp" CONFIG_NAME="ProjektZaliczeniowy.cpp">
       <option name="sourceFile" value="C:\Users\Cym\OneDrive\Dokumenty\GitHub\ProjektZaliczeniowy\ProjektZaliczeniowy.cpp" />
       <method v="2">
@@ -105,6 +104,7 @@
       <workItem from="1673885685316" duration="22000" />
       <workItem from="1673886066056" duration="810000" />
       <workItem from="1673948565464" duration="7924000" />
+      <workItem from="1673957574117" duration="1518000" />
     </task>
     <task id="LOCAL-00001" summary="elo dziala jest git">
       <created>1673225420257</created>

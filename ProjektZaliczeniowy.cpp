@@ -2,28 +2,29 @@
 
 #include <iostream>
 #include <windows.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <cstdio>
+#include <cstdlib>
+#include <ctime>
 #include <conio.h>
 #include <fstream>
 #include <string>
 #include <iomanip>
+
 
 using namespace std;
 const int MAX_SIZE = 32;
 
 class druzyna {
 public:
-    double ocena;
-    int punkty;
-    int bilans;
+    double ocena{};
+    int punkty{};
+    int bilans{};
     string nazwa;
     string JakaGrupa;
-    int wynik;
+    int wynik{};
 
 
-    void wypisz() {
+    void wypisz() const {
         cout << setw(0) << setfill(' ') << nazwa << endl;
 
     }
@@ -83,7 +84,7 @@ public:
 
     druzyna druzynyPucharowe[2];
 
-    double szansa(double waga1, double waga2) {
+    double szansa([[maybe_unused]] double waga1, [[maybe_unused]] double waga2) {
         double szansa1;
         szansa1 = (druzynyPucharowe[0].ocena / (druzynyPucharowe[0].ocena + druzynyPucharowe[0].ocena)) * 100;
         return szansa1;
@@ -95,8 +96,8 @@ Sleep(500);
         druzynyPucharowe[1].wynik = 0;
 
 
-        int gol1 = 0;
-        int gol2 = 0;
+         int gol1 = 0;
+         int gol2 = 0;
         int gol[6];
         int size = rand() % 6;
         cout << "MECZ: " << endl;
@@ -129,8 +130,8 @@ Sleep(500);
     string dogrywka() {
         Sleep(500);
         cout << endl;
-        int gol1 = 0;
-        int gol2 = 0;
+         int gol1 = 0;
+         int gol2 = 0;
         int gol[6];
         int size = rand() % 2;
         for (int i = 0; i < size; i++) {
@@ -188,7 +189,7 @@ Sleep(500);
 
             }
         }
-        while ((gol1 == gol2)) {
+        while (gol1 == gol2) {
             if (randomKarne() == 1) {
                 gol1 = gol1 + 1;
 
@@ -323,7 +324,7 @@ void mecz(int *dr1, int *dr2, int *bil1, int *bil2, double waga1, double waga2, 
         *dr1 = *dr1 + 3;
     } else if (gol2 > gol1) {
         *dr2 = *dr2 + 3;
-    } else if (gol1 = gol2) {
+    } else if (gol1 == gol2) {
         *dr1 = *dr1 + 1;
         *dr2 = *dr2 + 1;
     } else if (gol1 == 0 && gol2 == 0) {
@@ -348,9 +349,9 @@ int main() {
     string *group = new string[MAX_SIZE];
     string *team = new string[MAX_SIZE];
 
-    int size = read_data("chances.txt", grade);
-    int size2 = read_data2("groups.txt", group);
-    int size3 = read_data2("teams.txt", team);
+    read_data("chances.txt", grade);
+    read_data2("groups.txt", group);
+    read_data2("teams.txt", team);
 
     int *points = new int[MAX_SIZE];
     int *balance = new int[MAX_SIZE];
@@ -579,5 +580,6 @@ if (i % 70 == 0)cout << endl;
 
     return 0;
 }
+
 
 
