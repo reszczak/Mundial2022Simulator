@@ -14,8 +14,8 @@
   <component name="ChangeListManager">
     <list default="true" id="61bbbe2f-68a5-4910-9078-0f531e914803" name="Changes" comment="test jetbrains">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjektZaliczeniowy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektZaliczeniowy.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjektZaliczeniowy.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ProjektZaliczeniowy.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +57,12 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Cym/OneDrive/Dokumenty/GitHub/ProjektZaliczeniowy&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/reszc/source/repos/ProjektZaliczeniowy&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -105,6 +106,10 @@
       <workItem from="1673886066056" duration="810000" />
       <workItem from="1673948565464" duration="7924000" />
       <workItem from="1673957574117" duration="1518000" />
+      <workItem from="1673961071456" duration="106000" />
+      <workItem from="1674045475324" duration="976000" />
+      <workItem from="1674161424752" duration="1280000" />
+      <workItem from="1674210449380" duration="2941000" />
     </task>
     <task id="LOCAL-00001" summary="elo dziala jest git">
       <created>1673225420257</created>
