@@ -548,6 +548,6 @@ if (i % 70 == 0)cout << endl;
 - sprawozdanie
 
 ## Pomysłodawca projektu i założyciel reszczaks team ©
-![panda](https://imgur.com/61k4gJt)
+![panda](panda.jpg)
 ### Dawid Reszczyński
 
